@@ -1,11 +1,21 @@
-body {
+/*body {
     background-image: url(images/one-piece-thousand-sunny-wallpaper-3840x2160_54.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center right; /* Pour voir le bateau sur desktop */
+    background-position: center ; 
     height: 100vh;
     margin: 0;
     overflow: hidden;
+}*/
+
+body::before{
+    background-image:url(images/imagesAccueil/backgroundaccueil.jpg) ;
+    position :absolute;
+    content : " ";
+    width : 100vw;
+    height : 100vw;
+    top: 0;
+    left: 0;
 }
 
 .header {
