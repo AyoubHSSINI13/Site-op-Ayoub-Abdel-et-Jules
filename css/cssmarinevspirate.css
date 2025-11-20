@@ -1,0 +1,9 @@
+body {
+    background-image: url(images/ImagesMarineSunny/BackGPressSunnyMarine.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center right; /* Pour voir le bateau sur desktop */
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
