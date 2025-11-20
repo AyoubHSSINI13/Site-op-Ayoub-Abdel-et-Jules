@@ -1,0 +1,131 @@
+body {
+    background-image: url(images/one-piece-thousand-sunny-wallpaper-3840x2160_54.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center right; /* Pour voir le bateau sur desktop */
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.header {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* --- Styles par défaut (Desktop) --- */
+
+.pancarte {
+    position: absolute;
+   
+    left: 5%;
+    transform: none;
+    width: 40%; 
+    min-width: 400px; 
+}
+
+#pancarte {
+    width: 100%;
+    position: relative;
+   
+}
+
+.affiches {
+    position: absolute;
+    top: 19%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+    gap: 15px; 
+    z-index: 1;
+    width: 80%; 
+    padding-bottom: 20px; 
+}
+
+.affiches img {
+    width: 33%;
+    height: auto; 
+    min-width: 120px;
+}
+
+#op {
+    width: 35%;
+    min-width: 200px;
+}
+
+/* --- Media queries pour la responsivité --- */
+
+/* ▼▼▼ Pour la Tablette (basé sur votre maquette) ▼▼▼ */
+@media (max-width: 768px) {
+    body {
+        background-position: center; /* Fond au centre */
+    }
+
+    .header {
+        margin-top: 20px;
+    }
+
+    #op {
+        width: 50%;
+        max-width: 200px;
+    }
+
+    .pancarte {
+        left: 50%; /* Centré */
+        bottom: 0;
+        transform: translateX(-50%);
+        width: 70%; /* Retaillé pour la tablette */
+        min-width: 300px;
+    }
+
+    #pancarte {
+        width: 100%;
+    }
+
+    .affiches {
+        top: 30%; /* Ajusté pour remonter sur la tablette */
+        gap: 8px; /* Réduit le gap */
+        width: 95%; /* Prend plus de largeur sur la pancarte */
+    }
+
+    .affiches img {
+        width: 32%; /* Ajusté pour la tablette */
+        min-width: 80px;
+        max-width: 120px; /* Une max-width peut être utile ici */
+    }
+}
+
+/* ▼▼▼ Pour le Mobile (basé sur votre maquette) ▼▼▼ */
+@media (max-width: 480px) {
+    .header {
+        margin-top: 10px;
+    }
+
+    #op {
+        width: 60%;
+        max-width: 150px;
+    }
+
+    .pancarte {
+        width: 85%; /* Retaillé pour le mobile */
+        min-width: 280px;
+    }
+
+    #pancarte {
+        width: 100%;
+    }
+
+    .affiches {
+        top: 25%; /* Ajusté pour le mobile */
+        gap: 5px; /* Réduit encore le gap */
+        width: 98%;
+    }
+
+    .affiches img {
+        width: 32%; /* Ajusté pour le mobile */
+        min-width: 70px;
+        max-width: 100px;
+    }
+}
