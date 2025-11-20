@@ -24,7 +24,7 @@ body {
     min-width: 400px; 
 }
 
-#pancarte {
+#pancarte{
     width: 100%;
     position: relative;
    
@@ -48,6 +48,11 @@ body {
     width: 33%;
     height: auto; 
     min-width: 120px;
+}
+
+#pancarte .affiches img{
+    display: flex;
+    position: absolute; top : 10vh;
 }
 
 #op {
