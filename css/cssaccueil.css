@@ -2,14 +2,14 @@ body {
     background-image: url(/images/imagesAccueil/backgroundaccueil.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center ; 
+    background-position: right; 
     height: 100vh;
     margin: 0;
     overflow: hidden;
 }
 
 /*body::before{
-    background-image:url(images/imagesAccueil/backgroundaccueil.jpg) ;
+    background-image:url(/images/imagesAccueil/backgroundaccueil.jpg) ;
     position :absolute;
     content : " ";
     width : 100vw;
@@ -23,19 +23,20 @@ body {
     margin-top: 50px;
 }
 
+
 /* --- Styles par défaut (Desktop) --- */
 
 .pancarte {
     position: absolute;
-   
     left: 5%;
     transform: none;
-    width: 40%; 
-    min-width: 400px; 
+    width: 35vw; 
+    min-width: 500px;
+    bottom: -10vw;
 }
 
 #pancarte{
-    width: 100%;
+    width:100%;
     position: relative;
    
 }
@@ -48,14 +49,26 @@ body {
     display: flex;
     justify-content: center; 
     align-items: flex-start; 
-    gap: 15px; 
-    z-index: 1;
-    width: 80%; 
+    width: 28vw; 
     padding-bottom: 20px; 
+    gap: 9px;
+}
+
+.affiches a img {
+    width: 100%;     /* L'image prend 100% de la largeur du lien, pas plus ! */
+    height: auto;    /* On garde les proportions (le ratio) de l'image */
+    display: block;  /* Supprime les petits espaces blancs sous les images */
+    transition: transform 0.3s ease; /* (Optionnel) Pour l'animation au survol */
+}
+
+.affiches img:hover {
+    transform: scale(1.10);
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .affiches img {
-    width: 33%;
+    width: 30vw;
     height: auto; 
     min-width: 120px;
 }
@@ -66,8 +79,8 @@ body {
 }
 
 #op {
-    width: 35%;
-    min-width: 200px;
+    width: 30%;
+    min-width: 400px;
 }
 
 /* --- Media queries pour la responsivité --- */
@@ -75,7 +88,7 @@ body {
 /* ▼▼▼ Pour la Tablette (basé sur votre maquette) ▼▼▼ */
 @media (max-width: 768px) {
     body {
-        background-position: center; /* Fond au centre */
+        background-position: 90% center; /* Fond au centre */
     }
 
     .header {
@@ -83,16 +96,16 @@ body {
     }
 
     #op {
-        width: 50%;
-        max-width: 200px;
+        width: 60%;
+        max-width: 400px;
     }
 
     .pancarte {
         left: 50%; /* Centré */
-        bottom: 0;
+        bottom: -25vw;
         transform: translateX(-50%);
-        width: 70%; /* Retaillé pour la tablette */
-        min-width: 300px;
+        width: 65%; /* Retaillé pour la tablette */
+        min-width: 350px;
     }
 
     #pancarte {
@@ -100,9 +113,10 @@ body {
     }
 
     .affiches {
-        top: 30%; /* Ajusté pour remonter sur la tablette */
-        gap: 8px; /* Réduit le gap */
-        width: 95%; /* Prend plus de largeur sur la pancarte */
+        top: 19%; /* Ajusté pour remonter sur la tablette */
+        gap: 5px; /* Réduit le gap */
+        width: 85%; /* Prend plus de largeur sur la pancarte */
+        left: 50%;
     }
 
     .affiches img {
@@ -110,6 +124,12 @@ body {
         min-width: 80px;
         max-width: 120px; /* Une max-width peut être utile ici */
     }
+
+    .affiches img:hover {
+    transform: scale(1.10);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
 }
 
 /* ▼▼▼ Pour le Mobile (basé sur votre maquette) ▼▼▼ */
@@ -117,15 +137,20 @@ body {
     .header {
         margin-top: 10px;
     }
+    
+    body{
+        background-position: 80% center; /* Fond au centre */
+    }
 
     #op {
-        width: 60%;
+        width: 50%;
         max-width: 150px;
     }
 
     .pancarte {
         width: 85%; /* Retaillé pour le mobile */
         min-width: 280px;
+        bottom: -30vw;
     }
 
     #pancarte {
@@ -133,9 +158,10 @@ body {
     }
 
     .affiches {
-        top: 25%; /* Ajusté pour le mobile */
-        gap: 5px; /* Réduit encore le gap */
-        width: 98%;
+        top: 20%; /* Ajusté pour le mobile */
+        gap: 8px; /* Réduit encore le gap */
+        width: 81%;
+        left: 50%;
     }
 
     .affiches img {
@@ -143,4 +169,9 @@ body {
         min-width: 70px;
         max-width: 100px;
     }
+    .affiches img:hover {
+    transform: scale(1.10);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
 }
