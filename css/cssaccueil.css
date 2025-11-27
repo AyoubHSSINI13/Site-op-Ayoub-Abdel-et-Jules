@@ -102,7 +102,7 @@ body {
 
     .pancarte {
         left: 50%; /* Centré */
-        bottom: -25vw;
+        bottom: -35vw;
         transform: translateX(-50%);
         width: 65%; /* Retaillé pour la tablette */
         min-width: 350px;
@@ -150,7 +150,7 @@ body {
     .pancarte {
         width: 85%; /* Retaillé pour le mobile */
         min-width: 280px;
-        bottom: -30vw;
+        bottom: -40vw;
     }
 
     #pancarte {
