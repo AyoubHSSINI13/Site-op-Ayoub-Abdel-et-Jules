@@ -1,0 +1,9 @@
+body{
+    background-image: url(/images/imagesMUGI/BackG.\ Mugi.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 75% center; 
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
