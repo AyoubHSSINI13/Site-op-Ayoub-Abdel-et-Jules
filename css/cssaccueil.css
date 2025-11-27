@@ -145,6 +145,8 @@ body {
     
     body{
         background-position: 80% center; /* Fond au centre */
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
     #op {
