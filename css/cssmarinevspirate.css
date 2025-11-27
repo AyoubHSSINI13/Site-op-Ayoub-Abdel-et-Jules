@@ -2,7 +2,7 @@ body {
     background-image: url(/images/ImagesMarineSunny/BackGPresSunnyMarine.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center right; /* Pour voir le bateau sur desktop */
+    background-position: center; 
     height: 100vh;
     margin: 0;
     overflow: hidden;
