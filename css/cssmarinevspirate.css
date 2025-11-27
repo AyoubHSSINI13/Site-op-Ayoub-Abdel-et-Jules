@@ -104,7 +104,6 @@ body {
 
     #panneauretour {
         width: 40vw;
-        top: -20vw;
-        left: 30%;
+        top: 0vw;
     }
 }
