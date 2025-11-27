@@ -82,7 +82,12 @@ body {
     width: 30%;
     min-width: 400px;
 }
-
+.affiches > a:first-child {
+    transform: rotate(-2deg);
+}
+.affiches > a:last-child {
+    transform: rotate(1,5deg);
+}
 /* --- Media queries pour la responsivité --- */
 
 /* ▼▼▼ Pour la Tablette (basé sur votre maquette) ▼▼▼ */

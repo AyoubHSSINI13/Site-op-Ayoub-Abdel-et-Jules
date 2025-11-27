@@ -18,6 +18,12 @@ body {
     right: 8%;
 }
 
+#marine:hover {
+    transform: scale(1.10);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
 #pirate {
     width: 20vw;
     min-width: 150px;
