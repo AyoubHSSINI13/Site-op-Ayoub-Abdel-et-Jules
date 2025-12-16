@@ -10,12 +10,11 @@ body {
     color: #fff;
 }
 
-/* Header plein écran */
 header {
-    height: 100vh;              /* prend toute la hauteur de l'écran */
+    height: 100vh;             
     width: 100%;
     background-image: url("/images/imagesMUGI/mugiwarabck.webp");
-    background-size: cover;     /* image qui recouvre tout l'écran */
+    background-size: cover;     
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
@@ -36,7 +35,6 @@ header {
     cursor: pointer;
 }
 
-/* Container du slideshow centré */
 .slideshow-container {
     position: relative;
     width: 70%;
@@ -48,18 +46,17 @@ header {
     overflow: hidden;
 }
 
-/* Slide */
 .mySlides {
   display: flex;
-  flex-direction: column;   /* image > h1 > texte en colonne */
-  align-items: center;      /* centre horizontalement tous les enfants */
-  justify-content: center;  /* centre verticalement dans le slide */
+  flex-direction: column;   
+  align-items: center;      
+  justify-content: center;  
   width: 100%;
   height: 100%;
   padding: 20px;
   background: rgba(0, 0, 0, 0.55);
   border-radius: 15px;
-  text-align: center;       /* centre le texte à l'intérieur */
+  text-align: center;       
 }
 
 /* Image au centre */

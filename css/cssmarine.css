@@ -1,5 +1,160 @@
-body{
-    background-image: url(/images/mf.jpg) ;
-    background-size: cover;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: century, Arial, sans-serif;
+    color: #fff;
+}
+
+header {
+    height: 100vh;             
+    width: 100%;
+    background-image: url("/images/imagesMarine/BackG.Marine.png");
+    background-size: cover;     
+    background-position: center;
     background-repeat: no-repeat;
-}   
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Bouton retour */
+.principale {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.principale img {
+    height: 60px;
+    cursor: pointer;
+}
+
+.slideshow-container {
+    position: relative;
+    width: 70%;
+    max-width: 900px;
+    height: 70vh;
+    margin: auto;
+    top: 45%;
+    transform: translateY(-50%);
+    overflow: hidden;
+}
+
+.mySlides {
+  display: flex;
+  flex-direction: column;   
+  align-items: center;      
+  justify-content: center;  
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 15px;
+  text-align: center;       
+}
+
+/* Image au centre */
+.mySlides img {
+  max-width: 40%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Titre sous l'image */
+.mySlides h1 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+/* Texte sous le h1 */
+.mySlides .text {
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 60%;
+}
+
+
+
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev img,
+.next img {
+    width: 40px;
+    height: auto;
+}
+
+/* Points de navigation */
+.dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.active,
+.dot:hover {
+    background-color: #fff;
+}
+
+/* Effet fade (optionnel) */
+.fade {
+    animation-name: fade;
+    animation-duration: 0.7s;
+}
+
+@keyframes fade {
+    from { opacity: 0.4; }
+    to   { opacity: 1; }
+}
+
+/* Un peu de responsive simple */
+@media (max-width: 900px) {
+    .slideshow-container {
+        width: 90%;
+        height: 75vh;
+    }
+
+    .mySlides img {
+        max-width: 55%;
+    }
+
+    .mySlides h1 {
+        font-size: 1.6rem;
+    }
+
+    .mySlides .text {
+        font-size: 0.9rem;
+    }
+}
