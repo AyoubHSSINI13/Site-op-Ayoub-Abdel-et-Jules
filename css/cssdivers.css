@@ -202,3 +202,28 @@ body {
         padding-right: 10px;
     }
 }
+
+/* --- CONFIGURATION GLOBALE ET IMAGE DE FOND FIXE --- */
+body {
+    background-image: url(/images/ImagesDivers/MapOP.png);
+    background-attachment: fixed; 
+    background-position: center center; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    margin: 0;
+    overflow-y: auto; 
+    overflow-x: hidden;
+    font-family: sans-serif;
+}
+
+
+/* --- OPTIMISATION POUR MOBILE --- */
+@media (max-width: 768px) {
+    body {
+        /* Sur mobile, on peut légèrement décaler pour mieux voir Grand Line */
+        background-position: 60% center; 
+    }
+    
+    /* Le reste des règles mobile (video, container...) ne change pas */
+}

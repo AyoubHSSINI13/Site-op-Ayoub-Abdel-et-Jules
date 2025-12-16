@@ -1,5 +1,6 @@
 body {
     background-image: url(/images/imagesAccueil/backgroundaccueil.webp);
+    background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right; 
@@ -7,16 +8,6 @@ body {
     margin: 0;
     overflow: hidden;
 }
-
-/*body::before{
-    background-image:url(/images/imagesAccueil/backgroundaccueil.jpg) ;
-    position :absolute;
-    content : " ";
-    width : 100vw;
-    height : 100vw;
-    top: 0;
-    left: 0;
-}*/
 
 .header {
     text-align: center;
