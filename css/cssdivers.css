@@ -1,0 +1,10 @@
+body {
+    background-image: url(/images/ImagesDivers/MapOP.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right; 
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+

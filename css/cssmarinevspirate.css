@@ -28,11 +28,12 @@ h2 {
     position: absolute;
     top: 30%;
     right: 6%;
+    transition: transform 0.2s ease-in-out;
 }
+
 
 #marine:hover {
     transform: scale(1.10);
-    transition: transform 0.3s ease;
     cursor: pointer;
 }
 
@@ -42,11 +43,11 @@ h2 {
     position: absolute;
     top: 32%;
     left: 10%;
+    transition: transform 200ms ease;
 }
 
 #pirate:hover {
     transform: scale(1.10);
-    transition: transform 0.3s ease;
     cursor: pointer;
 }
 
