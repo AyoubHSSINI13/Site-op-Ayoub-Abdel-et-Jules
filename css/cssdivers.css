@@ -1,38 +1,35 @@
-/* --- CONFIGURATION GLOBALE --- */
 body {
-    background-image: url(/images/ImagesDivers/MapOP.png);
+    background-image: url(/images/ImagesDivers/MapOP.avif);
+    background-attachment: fixed;
+    background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: right; 
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
-    /* Important : permet le scroll si l'écran est petit, mais cache la barre horizontale */
-    overflow-y: auto; 
+    overflow-y: auto;
     overflow-x: hidden;
     font-family: sans-serif;
 }
 
-/* --- LE NOUVEAU CONTENEUR (C'est lui qui aligne tout) --- */
 .container-pirate {
-    display: flex;              /* Active l'alignement côte à côte */
-    flex-direction: row;        /* Ligne horizontale */
-    justify-content: center;    /* Centre le bloc entier sur la page */
-    align-items: center;        /* Aligne verticalement au milieu */
-    gap: 60px;                  /* Espace entre la vidéo et le formulaire */
-    min-height: 100vh;          /* Prend toute la hauteur de l'écran */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    min-height: 100vh;
     padding: 20px;
-    box-sizing: border-box;     /* Gère bien les marges */
-    flex-wrap: wrap;            /* Permet de passer l'un sous l'autre sur mobile */
+    box-sizing: border-box;
+    flex-wrap: wrap;
 }
 
-/* --- LE BOUTON LOG POSE (Retour Accueil) --- */
 .logpose-wrapper {
-    position: fixed;   /* Reste fixe en bas à droite */
+    position: fixed;
     bottom: 20px;
     right: 20px;
     z-index: 9999;
     display: flex;
-    justify-content: flex-end; 
+    justify-content: flex-end;
 }
 
 .logpose-btn {
@@ -73,7 +70,6 @@ body {
     transition: all 0.5s ease-in-out;
 }
 
-/* Animations Log Pose */
 .logpose-btn:hover .logpose-text {
     max-width: 250px;
     opacity: 1;
@@ -86,29 +82,26 @@ body {
     transform: rotate(-360deg);
 }
 
-/* --- STYLE DE LA VIDÉO --- */
 .video-section iframe {
     border-radius: 15px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
-    border: 3px solid #5d4037; /* Bordure effet bois */
-    max-width: 100%; /* S'adapte si l'écran est petit */
+    border: 3px solid #5d4037;
+    max-width: 100%;
 }
 
-/* --- LE FORMULAIRE --- */
 .inscription-form-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* On enlève le padding ici car géré par le container-pirate */
 }
 
 .transparent-form {
-    background-color: rgba(0, 0, 0, 0.6); 
+    background-color: rgba(0, 0, 0, 0.6);
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     width: 100%;
-    min-width: 350px; /* Largeur mini pour que ce soit joli */
+    min-width: 350px;
     max-width: 400px;
     color: white;
 }
@@ -120,9 +113,17 @@ body {
     text-transform: uppercase;
 }
 
-/* Champs de saisie */
-.input-group { margin-bottom: 15px; }
-.input-group label { display: block; margin-bottom: 8px; font-weight: bold; font-size: 14px; }
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
 .input-group input {
     width: 100%;
     padding: 12px;
@@ -133,17 +134,33 @@ body {
     box-sizing: border-box;
     transition: all 0.3s ease;
 }
+
 .input-group input:focus {
     outline: none;
     background-color: rgba(255, 255, 255, 0.2);
     border-left: 4px solid #3EBCB3;
 }
 
-/* Choix Faction (Pirate/Marine) */
-.faction-choice-container { margin: 20px 0; text-align: center; }
-.faction-title { margin-bottom: 10px; font-weight: bold; }
-.faction-options { display: flex; justify-content: center; gap: 20px; }
-.faction-label input[type="radio"] { display: none; }
+.faction-choice-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.faction-title {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.faction-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.faction-label input[type="radio"] {
+    display: none;
+}
+
 .faction-custom-radio {
     display: inline-block;
     padding: 10px 20px;
@@ -153,7 +170,11 @@ body {
     transition: all 0.3s ease;
     border: 2px solid transparent;
 }
-.faction-label:hover .faction-custom-radio { background-color: rgba(255, 255, 255, 0.3); }
+
+.faction-label:hover .faction-custom-radio {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
 .faction-label input[type="radio"]:checked + .faction-custom-radio {
     background-color: #3EBCB3;
     color: white;
@@ -161,7 +182,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Bouton S'inscrire */
 .submit-btn {
     width: 100%;
     padding: 15px;
@@ -175,27 +195,26 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
 .submit-btn:hover {
     background-color: #2da8a0;
     transform: translateY(-2px);
 }
 
-/* --- MOBILE & TABLETTE --- */
 @media (max-width: 1100px) {
     .container-pirate {
-        flex-direction: column; /* Empile les éléments */
+        flex-direction: column;
         gap: 40px;
         padding-top: 50px;
-        height: auto; /* Laisse la page grandir */
+        height: auto;
     }
-    
+
     .video-section {
         width: 100%;
         display: flex;
         justify-content: center;
     }
 
-    /* Sur mobile, on affiche toujours le texte du logpose */
     .logpose-text {
         width: auto !important;
         opacity: 1 !important;
@@ -203,27 +222,8 @@ body {
     }
 }
 
-/* --- CONFIGURATION GLOBALE ET IMAGE DE FOND FIXE --- */
-body {
-    background-image: url(/images/ImagesDivers/MapOP.png);
-    background-attachment: fixed; 
-    background-position: center center; 
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    margin: 0;
-    overflow-y: auto; 
-    overflow-x: hidden;
-    font-family: sans-serif;
-}
-
-
-/* --- OPTIMISATION POUR MOBILE --- */
 @media (max-width: 768px) {
     body {
-        /* Sur mobile, on peut légèrement décaler pour mieux voir Grand Line */
-        background-position: 60% center; 
+        background-position: 60% center;
     }
-    
-    /* Le reste des règles mobile (video, container...) ne change pas */
 }
