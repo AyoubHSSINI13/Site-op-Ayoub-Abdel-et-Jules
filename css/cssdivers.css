@@ -8,3 +8,76 @@ body {
     overflow: hidden;
 }
 
+
+/* --- LE CONTENEUR (POSITIONNEMENT) --- */
+.logpose-wrapper {
+    /*position: fixed;*/  /* "Fixed" = Reste collé à l'écran même si on scrolle */
+    bottom: 20px;     /* Écart par rapport au BAS de la fenêtre */
+    right: 20px;      /* Écart par rapport à la DROITE de la fenêtre */
+    z-index: 9999;    /* Très élevé pour passer au-dessus des images/footers */
+    
+    /* Permet au bouton de s'étendre vers la gauche */
+    display: flex;
+    justify-content: flex-end; 
+}
+
+/* --- LE BOUTON (STYLE) --- */
+.logpose-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+    background-color: #3EBCB3;
+    border-radius: 50px;
+    padding: 5px;
+    text-decoration: none;
+    
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Ombre pour bien le voir sur fond blanc */
+    transition: all 0.5s ease-in-out;
+}
+
+/* --- L'IMAGE (BOUSSOLE) --- */
+.logpose-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    
+    position: relative;
+    z-index: 20; /* Au-dessus du texte */
+    
+    flex-shrink: 0;
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* --- LE TEXTE (CACHÉ) --- */
+.logpose-text {
+    color: white;
+    font-family: 'Arial Black', sans-serif; /* Police grasse */
+    font-size: 16px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    
+    position: relative;
+    z-index: 10; /* En dessous de l'image */
+    
+    max-width: 0;
+    opacity: 0;
+    transform: translateX(40px); /* Caché à droite sous l'image */
+    
+    transition: all 0.5s ease-in-out;
+}
+
+/* --- ANIMATIONS AU SURVOL --- */
+.logpose-btn:hover .logpose-text {
+    max-width: 250px;
+    opacity: 1;
+    margin-left: 20px;
+    margin-right: 10px;
+    transform: translateX(0);
+}
+
+.logpose-btn:hover .logpose-icon {
+    transform: rotate(-360deg);
+}
