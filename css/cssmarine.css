@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
     margin: 0;
     padding: 0;
@@ -15,6 +16,11 @@ header {
     background-image: url("/images/imagesMarine/BackG.Marine.png");
     background-size: cover;     
     background-position: center;
+=======
+body{
+    background-image: url(/images/mf.webp); ;
+    background-size: cover;
+>>>>>>> 452c154ee125d2ca053e1d91f8c8273f9f7812d1
     background-repeat: no-repeat;
     position: relative;
     display: flex;

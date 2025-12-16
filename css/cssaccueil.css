@@ -55,15 +55,15 @@ body {
 }
 
 .affiches a img {
-    width: 100%;     /* L'image prend 100% de la largeur du lien, pas plus ! */
-    height: auto;    /* On garde les proportions (le ratio) de l'image */
-    display: block;  /* Supprime les petits espaces blancs sous les images */
-    transition: transform 0.3s ease; /* (Optionnel) Pour l'animation au survol */
+    width: 100%;     
+    height: auto;    
+    display: block;
+    transition: transform 0.3s ease-in-out;
 }
+
 
 .affiches img:hover {
     transform: scale(1.10);
-    transition: transform 0.3s ease;
     cursor: pointer;
 }
 
