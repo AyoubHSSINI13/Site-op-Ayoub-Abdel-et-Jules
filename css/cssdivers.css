@@ -1,3 +1,4 @@
+/* --- CONFIGURATION GLOBALE --- */
 body {
     background-image: url(/images/ImagesDivers/MapOP.png);
     background-size: cover;
@@ -5,71 +6,74 @@ body {
     background-position: right; 
     height: 100vh;
     margin: 0;
-    overflow: hidden;
+    /* Important : permet le scroll si l'écran est petit, mais cache la barre horizontale */
+    overflow-y: auto; 
+    overflow-x: hidden;
+    font-family: sans-serif;
 }
 
+/* --- LE NOUVEAU CONTENEUR (C'est lui qui aligne tout) --- */
+.container-pirate {
+    display: flex;              /* Active l'alignement côte à côte */
+    flex-direction: row;        /* Ligne horizontale */
+    justify-content: center;    /* Centre le bloc entier sur la page */
+    align-items: center;        /* Aligne verticalement au milieu */
+    gap: 60px;                  /* Espace entre la vidéo et le formulaire */
+    min-height: 100vh;          /* Prend toute la hauteur de l'écran */
+    padding: 20px;
+    box-sizing: border-box;     /* Gère bien les marges */
+    flex-wrap: wrap;            /* Permet de passer l'un sous l'autre sur mobile */
+}
 
-/* --- LE CONTENEUR (POSITIONNEMENT) --- */
+/* --- LE BOUTON LOG POSE (Retour Accueil) --- */
 .logpose-wrapper {
-    /*position: fixed;*/  /* "Fixed" = Reste collé à l'écran même si on scrolle */
-    bottom: 20px;     /* Écart par rapport au BAS de la fenêtre */
-    right: 20px;      /* Écart par rapport à la DROITE de la fenêtre */
-    z-index: 9999;    /* Très élevé pour passer au-dessus des images/footers */
-    
-    /* Permet au bouton de s'étendre vers la gauche */
+    position: fixed;   /* Reste fixe en bas à droite */
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
     display: flex;
     justify-content: flex-end; 
 }
 
-/* --- LE BOUTON (STYLE) --- */
 .logpose-btn {
     display: inline-flex;
     align-items: center;
     justify-content: flex-end;
-    
     background-color: #3EBCB3;
     border-radius: 50px;
     padding: 5px;
     text-decoration: none;
-    
     position: relative;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Ombre pour bien le voir sur fond blanc */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     transition: all 0.5s ease-in-out;
 }
 
-/* --- L'IMAGE (BOUSSOLE) --- */
 .logpose-icon {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    
     position: relative;
-    z-index: 20; /* Au-dessus du texte */
-    
+    z-index: 20;
     flex-shrink: 0;
     transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* --- LE TEXTE (CACHÉ) --- */
 .logpose-text {
     color: white;
-    font-family: 'Arial Black', sans-serif; /* Police grasse */
+    font-family: 'Arial Black', sans-serif;
     font-size: 16px;
     text-transform: uppercase;
     white-space: nowrap;
     overflow: hidden;
-    
     position: relative;
-    z-index: 10; /* En dessous de l'image */
-    
+    z-index: 10;
     max-width: 0;
     opacity: 0;
-    transform: translateX(40px); /* Caché à droite sous l'image */
-    
+    transform: translateX(40px);
     transition: all 0.5s ease-in-out;
 }
 
-/* --- ANIMATIONS AU SURVOL --- */
+/* Animations Log Pose */
 .logpose-btn:hover .logpose-text {
     max-width: 250px;
     opacity: 1;
@@ -82,89 +86,64 @@ body {
     transform: rotate(-360deg);
 }
 
-/* --- Style du Conteneur Global du formulaire --- */
+/* --- STYLE DE LA VIDÉO --- */
+.video-section iframe {
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    border: 3px solid #5d4037; /* Bordure effet bois */
+    max-width: 100%; /* S'adapte si l'écran est petit */
+}
+
+/* --- LE FORMULAIRE --- */
 .inscription-form-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    /* Assure-toi que ton body a une image de fond pour voir la transparence ! */
+    /* On enlève le padding ici car géré par le container-pirate */
 }
 
-/* --- Le Formulaire Transparent --- */
 .transparent-form {
-    /* C'est ICI que se fait la transparence : Noir à 60% d'opacité */
     background-color: rgba(0, 0, 0, 0.6); 
     padding: 30px;
-    border-radius: 15px; /* Bords arrondis */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Ombre portée pour le relief */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     width: 100%;
-    max-width: 400px; /* Largeur maximale pour rester joli */
-    color: white; /* Texte en blanc */
-    font-family: sans-serif;
+    min-width: 350px; /* Largeur mini pour que ce soit joli */
+    max-width: 400px;
+    color: white;
 }
 
 .transparent-form h2 {
     text-align: center;
     margin-bottom: 25px;
-    color: #3EBCB3; /* Titre en turquoise */
+    color: #3EBCB3;
     text-transform: uppercase;
 }
 
-/* --- Styles des champs de saisie (Inputs) --- */
-.input-group {
-    margin-bottom: 15px;
-}
-
-.input-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    font-size: 14px;
-}
-
+/* Champs de saisie */
+.input-group { margin-bottom: 15px; }
+.input-group label { display: block; margin-bottom: 8px; font-weight: bold; font-size: 14px; }
 .input-group input {
-    width: 100%; /* Prend toute la largeur */
+    width: 100%;
     padding: 12px;
     border: none;
     border-radius: 5px;
-    /* Fond des inputs légèrement transparent aussi */
     background-color: rgba(255, 255, 255, 0.1);
     color: white;
-    box-sizing: border-box; /* Important pour les marges */
+    box-sizing: border-box;
     transition: all 0.3s ease;
 }
-
-/* Effet quand on clique dans un champ */
 .input-group input:focus {
     outline: none;
     background-color: rgba(255, 255, 255, 0.2);
-    border-left: 4px solid #3EBCB3; /* Petite barre turquoise à gauche */
+    border-left: 4px solid #3EBCB3;
 }
 
-/* --- Style du choix Pirate/Marine --- */
-.faction-choice-container {
-    margin: 20px 0;
-    text-align: center;
-}
-
-.faction-title {
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-.faction-options {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Espace entre les deux choix */
-}
-
-/* Cacher le petit rond moche par défaut des boutons radio */
-.faction-label input[type="radio"] {
-    display: none;
-}
-
-/* Style des boutons personnalisés */
+/* Choix Faction (Pirate/Marine) */
+.faction-choice-container { margin: 20px 0; text-align: center; }
+.faction-title { margin-bottom: 10px; font-weight: bold; }
+.faction-options { display: flex; justify-content: center; gap: 20px; }
+.faction-label input[type="radio"] { display: none; }
 .faction-custom-radio {
     display: inline-block;
     padding: 10px 20px;
@@ -174,39 +153,21 @@ body {
     transition: all 0.3s ease;
     border: 2px solid transparent;
 }
-
-/* Effet au survol */
-.faction-label:hover .faction-custom-radio {
-    background-color: rgba(255, 255, 255, 0.3);
-}
-
-/* Effet quand une option est SÉLECTIONNÉE */
+.faction-label:hover .faction-custom-radio { background-color: rgba(255, 255, 255, 0.3); }
 .faction-label input[type="radio"]:checked + .faction-custom-radio {
-    background-color: #3EBCB3; /* Devient turquoise */
+    background-color: #3EBCB3;
     color: white;
-    border-color: #3EBCB3;
     font-weight: bold;
-    transform: scale(1.05); /* Grossit légèrement */
+    transform: scale(1.05);
 }
 
-/* Petite touche : Pirate en rouge si sélectionné, Marine en bleu ? 
-   Décommente si tu veux essayer : */
-/* .pirate-option input[type="radio"]:checked + .faction-custom-radio {
-    background-color: #D32F2F; border-color: #D32F2F;
-}
-.marine-option input[type="radio"]:checked + .faction-custom-radio {
-    background-color: #1976D2; border-color: #1976D2;
-} 
-*/
-
-
-/* --- Style du Bouton S'inscrire --- */
+/* Bouton S'inscrire */
 .submit-btn {
     width: 100%;
     padding: 15px;
     border: none;
     border-radius: 50px;
-    background-color: #3EBCB3; /* Couleur turquoise */
+    background-color: #3EBCB3;
     color: white;
     font-size: 18px;
     font-weight: bold;
@@ -214,13 +175,27 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
-
 .submit-btn:hover {
-    background-color: #2da8a0; /* Un peu plus foncé au survol */
-    transform: translateY(-2px); /* Remonte légèrement */
+    background-color: #2da8a0;
+    transform: translateY(-2px);
 }
 
-@media (hover: none) {
+/* --- MOBILE & TABLETTE --- */
+@media (max-width: 1100px) {
+    .container-pirate {
+        flex-direction: column; /* Empile les éléments */
+        gap: 40px;
+        padding-top: 50px;
+        height: auto; /* Laisse la page grandir */
+    }
+    
+    .video-section {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Sur mobile, on affiche toujours le texte du logpose */
     .logpose-text {
         width: auto !important;
         opacity: 1 !important;
