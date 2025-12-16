@@ -81,3 +81,141 @@ body {
 .logpose-btn:hover .logpose-icon {
     transform: rotate(-360deg);
 }
+
+/* --- Style du Conteneur Global du formulaire --- */
+.inscription-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    /* Assure-toi que ton body a une image de fond pour voir la transparence ! */
+}
+
+/* --- Le Formulaire Transparent --- */
+.transparent-form {
+    /* C'est ICI que se fait la transparence : Noir à 60% d'opacité */
+    background-color: rgba(0, 0, 0, 0.6); 
+    padding: 30px;
+    border-radius: 15px; /* Bords arrondis */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Ombre portée pour le relief */
+    width: 100%;
+    max-width: 400px; /* Largeur maximale pour rester joli */
+    color: white; /* Texte en blanc */
+    font-family: sans-serif;
+}
+
+.transparent-form h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #3EBCB3; /* Titre en turquoise */
+    text-transform: uppercase;
+}
+
+/* --- Styles des champs de saisie (Inputs) --- */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.input-group input {
+    width: 100%; /* Prend toute la largeur */
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    /* Fond des inputs légèrement transparent aussi */
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    box-sizing: border-box; /* Important pour les marges */
+    transition: all 0.3s ease;
+}
+
+/* Effet quand on clique dans un champ */
+.input-group input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-left: 4px solid #3EBCB3; /* Petite barre turquoise à gauche */
+}
+
+/* --- Style du choix Pirate/Marine --- */
+.faction-choice-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.faction-title {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.faction-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espace entre les deux choix */
+}
+
+/* Cacher le petit rond moche par défaut des boutons radio */
+.faction-label input[type="radio"] {
+    display: none;
+}
+
+/* Style des boutons personnalisés */
+.faction-custom-radio {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+/* Effet au survol */
+.faction-label:hover .faction-custom-radio {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Effet quand une option est SÉLECTIONNÉE */
+.faction-label input[type="radio"]:checked + .faction-custom-radio {
+    background-color: #3EBCB3; /* Devient turquoise */
+    color: white;
+    border-color: #3EBCB3;
+    font-weight: bold;
+    transform: scale(1.05); /* Grossit légèrement */
+}
+
+/* Petite touche : Pirate en rouge si sélectionné, Marine en bleu ? 
+   Décommente si tu veux essayer : */
+/* .pirate-option input[type="radio"]:checked + .faction-custom-radio {
+    background-color: #D32F2F; border-color: #D32F2F;
+}
+.marine-option input[type="radio"]:checked + .faction-custom-radio {
+    background-color: #1976D2; border-color: #1976D2;
+} 
+*/
+
+
+/* --- Style du Bouton S'inscrire --- */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    background-color: #3EBCB3; /* Couleur turquoise */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: #2da8a0; /* Un peu plus foncé au survol */
+    transform: translateY(-2px); /* Remonte légèrement */
+}
