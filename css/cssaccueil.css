@@ -1,175 +1,116 @@
+/* --- GLOBAL --- */
 body {
-    background-image: url(/images/imagesAccueil/backgroundaccueil.webp);
+    background-image: url('/images/imagesAccueil/backgroundaccueil.webp'); 
     background-attachment: fixed;
+    background-position: center right;
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: right; 
     height: 100vh;
     margin: 0;
-    overflow: hidden;
+    overflow: hidden; 
+    font-family: sans-serif;
 }
 
+/* --- HEADER --- */
 .header {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 5vh;
 }
 
+#op {
+    width: 30%;
+    min-width: 300px;
+    max-width: 600px;
+    height: auto;
+}
 
-/* --- Styles par défaut (Desktop) --- */
-
+/* --- PANCARTE (Conteneur du menu) --- */
 .pancarte {
     position: absolute;
     left: 5%;
-    transform: none;
     width: 35vw; 
     min-width: 500px;
     bottom: -10vw;
 }
 
-#pancarte{
-    width:100%;
-    position: relative;
-   
+#pancarte {
+    width: 100%;
+    display: block;
 }
 
+/* --- AFFICHES (Les liens) --- */
 .affiches {
     position: absolute;
-    top: 19%;
+    top: 20%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); 
     display: flex;
-    justify-content: center; 
-    align-items: flex-start; 
-    width: 28vw; 
-    padding-bottom: 20px; 
-    gap: 9px;
+    width: 80%; 
+    gap: 10px;
 }
 
-.affiches a img {
-    width: 100%;     
-    height: auto;    
+.affiches a {
     display: block;
     transition: transform 0.3s ease-in-out;
-}
-
-
-.affiches img:hover {
-    transform: scale(1.10);
-    cursor: pointer;
+    width: 30%;
 }
 
 .affiches img {
-    width: 30vw;
+    width: 100%; 
     height: auto; 
-    min-width: 120px;
+    display: block;
 }
 
-#pancarte .affiches img{
-    display: flex;
-    position: absolute; top : 10vh;
+/* --- INTERACTIONS --- */
+.affiches a:hover {
+    transform: scale(1.1); 
+    cursor: pointer;
+    z-index: 10; /* L'élément passe au premier plan */
 }
 
-#op {
-    width: 30%;
-    min-width: 400px;
-}
+/* Rotation des affiches gauche et droite */
 .affiches > a:first-child {
     transform: rotate(-2deg);
 }
-.affiches > a:last-child {
-    transform: rotate(1,5deg);
+.affiches > a:first-child:hover {
+    transform: scale(1.1) rotate(-2deg); 
 }
-/* --- Media queries pour la responsivité --- */
 
-/* ▼▼▼ Pour la Tablette (basé sur votre maquette) ▼▼▼ */
+.affiches > a:last-child {
+    transform: rotate(1.5deg); 
+}
+.affiches > a:last-child:hover {
+    transform: scale(1.1) rotate(1.5deg);
+}
+
+/* --- RESPONSIVE TABLETTE --- */
 @media (max-width: 768px) {
     body {
-        background-position: 90% center; /* Fond au centre */
-    }
-
-    .header {
-        margin-top: 20px;
-    }
-
-    #op {
-        width: 60%;
-        max-width: 400px;
+        background-position: 85% center;
     }
 
     .pancarte {
-        left: 50%; /* Centré */
-        bottom: -35vw;
+        left: 50%;
         transform: translateX(-50%);
-        width: 65%; /* Retaillé pour la tablette */
-        min-width: 350px;
-    }
-
-    #pancarte {
-        width: 100%;
+        bottom: -5vh; 
+        width: 80%;
+        min-width: auto; 
     }
 
     .affiches {
-        top: 19%; /* Ajusté pour remonter sur la tablette */
-        gap: 5px; /* Réduit le gap */
-        width: 85%; /* Prend plus de largeur sur la pancarte */
-        left: 50%;
+        width: 82%;
+        top: 22%; 
     }
-
-    .affiches img {
-        width: 32%; /* Ajusté pour la tablette */
-        min-width: 80px;
-        max-width: 120px; /* Une max-width peut être utile ici */
-    }
-
-    .affiches img:hover {
-    transform: scale(1.10);
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
 }
 
-/* ▼▼▼ Pour le Mobile (basé sur votre maquette) ▼▼▼ */
+/* --- RESPONSIVE MOBILE --- */
 @media (max-width: 480px) {
-    .header {
-        margin-top: 10px;
-    }
-    
-    body{
-        background-position: 80% center; /* Fond au centre */
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-
-    #op {
-        width: 50%;
-        max-width: 150px;
-    }
-
     .pancarte {
-        width: 85%; /* Retaillé pour le mobile */
-        min-width: 280px;
-        bottom: -40vw;
-    }
-
-    #pancarte {
-        width: 100%;
+        width: 95%;
+        bottom: -10vh; 
     }
 
     .affiches {
-        top: 20%; /* Ajusté pour le mobile */
-        gap: 8px; /* Réduit encore le gap */
-        width: 81%;
-        left: 50%;
+        top: 23%;
+        gap: 5px;
     }
-
-    .affiches img {
-        width: 32%; /* Ajusté pour le mobile */
-        min-width: 70px;
-        max-width: 100px;
-    }
-    .affiches img:hover {
-    transform: scale(1.10);
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
 }
