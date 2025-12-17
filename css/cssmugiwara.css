@@ -24,15 +24,63 @@ header {
 }
 
 /* Bouton retour */
-.principale {
-    position: absolute;
-    top: 20px;
-    left: 20px;
+.logpose-wrapper {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    justify-content: flex-end;
 }
 
-.principale img {
+.logpose-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #3EBCB3;
+    border-radius: 50px;
+    padding: 5px;
+    text-decoration: none;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.5s ease-in-out;
+}
+
+.logpose-icon {
+    width: 60px;
     height: 60px;
-    cursor: pointer;
+    border-radius: 50%;
+    position: relative;
+    z-index: 20;
+    flex-shrink: 0;
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.logpose-text {
+    color: white;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+    max-width: 0;
+    opacity: 0;
+    transform: translateX(40px);
+    transition: all 0.5s ease-in-out;
+}
+
+.logpose-btn:hover .logpose-text {
+    max-width: 250px;
+    opacity: 1;
+    margin-left: 20px;
+    margin-right: 10px;
+    transform: translateX(0);
+}
+
+.logpose-btn:hover .logpose-icon {
+    transform: rotate(-360deg);
 }
 
 .slideshow-container {
@@ -48,36 +96,37 @@ header {
 
 .mySlides {
   display: flex;
-  flex-direction: column;   
-  align-items: center;      
-  justify-content: center;  
+  flex-direction: row;          /* image à gauche, texte à droite */
+  align-items: flex-start;      /* aligne le haut de l’image et du h1 */
+  justify-content: center;
+  gap: 20px;
   width: 100%;
   height: 100%;
   padding: 20px;
   background: rgba(32, 31, 31, 0.55);
   border-radius: 15px;
-  text-align: center;       
+  text-align: left;             
 }
 
-/* Image au centre */
 .mySlides img {
   max-width: 40%;
   height: auto;
-  margin-bottom: 20px;
 }
 
-/* Titre sous l'image */
-.mySlides h1 {
-  font-size: 2.2rem;
-  margin-bottom: 15px;
-}
-
-/* Texte sous le h1 */
-.mySlides .text {
-  font-size: 1rem;
-  line-height: 1.5;
+.slide-content {
   max-width: 60%;
 }
+
+.slide-content h1 {
+  font-size: 2.2rem;
+  margin-top: 15px;
+}
+
+.slide-content .text {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
 
 
 
