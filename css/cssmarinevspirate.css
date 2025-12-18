@@ -8,6 +8,18 @@ body {
     overflow: hidden;
 }
 
+.header {
+    text-align: center;
+    margin-top: 5vh;
+}
+
+#returnhome {
+    width: 20%;
+    min-width: 300px;
+    max-width: 600px;
+    height: auto;
+}
+
 h2 {
     font: italic bold 2rem "Fira Sans", serif;
     text-align: center;
@@ -125,5 +137,92 @@ h2 {
         width: 40vw;
         top: 0vw;
     }
+}
+
+.logpose-menu a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.logpose-wrapper {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.logpose-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #1e5d59;
+    border-radius: 50px;
+    padding: 5px 80px 5px 20px;
+    height: 60px;
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-right: -60px;
+    transition: all 0.5s ease-in-out;
+    box-sizing: border-box;
+}
+
+.logpose-menu a {
+    color: white;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.logpose-menu a:hover {
+    color: #2a958e;
+}
+
+.logpose-icon-btn {
+    cursor: pointer;
+    z-index: 20;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    border-radius: 50%;
+}
+
+.logpose-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #1e5d59;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: block;
+    position: relative;
+    z-index: 21;
+}
+
+@media (hover: hover) {
+    .logpose-wrapper:hover .logpose-menu {
+        max-width: 600px;
+        opacity: 1;
+    }
+
+    .logpose-wrapper:hover .logpose-icon-btn .logpose-icon {
+        transform: rotate(-360deg);
+    }
+}
+
+#menu-toggle:checked~.logpose-menu {
+    max-width: 600px;
+    opacity: 1;
+}
+
+#menu-toggle:checked~.logpose-icon-btn .logpose-icon {
+    transform: rotate(-360deg);
 }
 
