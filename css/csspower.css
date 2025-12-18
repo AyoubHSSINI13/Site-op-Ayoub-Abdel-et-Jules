@@ -69,7 +69,7 @@ html, body {
   position: absolute;
   top: 60%;         /* sous l’écran */
   left: 47%;
-  transform: translateX(-50%);
+  transform: translateX(-100%);
   cursor: pointer;
 }
 .icone5-img {
@@ -270,10 +270,30 @@ html, body {
   }
 
 
-  .box3 {
+.box3 {
     bottom: 1%;
     right: 2%;
   }
+.box4 {
+  position: absolute;
+  top: 106%;        
+  right: 18%;    
+}
+.box5 {
+  position: absolute;
+  top: 121%;        
+  left: 18%;    
+}
+.box6 {
+  position: absolute;
+  top: 137%;        
+  right: 18%;    
+}
+.box7 {
+  position: absolute;
+  top: 90%;        
+  left: 24%;    
+}
 }
 
 
