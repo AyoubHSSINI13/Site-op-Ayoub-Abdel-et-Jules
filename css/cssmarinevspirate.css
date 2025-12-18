@@ -55,7 +55,7 @@ h2 {
     width: 20vw;
     min-width: 80px;
     position: absolute;
-    top: -50px;
+    top: 5%;
     left: 40%;
     cursor: pointer;
 }
