@@ -47,11 +47,16 @@ body {
     justify-content: flex-end;
 }
 
+/* Cache la checkbox technique */
+#toggle-logpose {
+    display: none;
+}
+
 .logpose-btn {
     display: inline-flex;
     align-items: center;
     justify-content: flex-end;
-    flex-direction: row-reverse; /* Inverse l'ordre : Texte à gauche, Icône à droite */
+    flex-direction: row-reverse;
     background-color: #1e5d59;
     border-radius: 50px;
     padding: 5px;
@@ -59,6 +64,8 @@ body {
     position: relative;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     transition: all 0.5s ease-in-out;
+    cursor: pointer; /* Indique qu'on peut cliquer */
+    -webkit-tap-highlight-color: transparent; /* Enlève le flash bleu sur mobile */
 }
 
 .logpose-icon {
@@ -72,6 +79,9 @@ body {
 }
 
 .logpose-text {
+    display: flex;
+    align-items: center;
+    gap: 20px;
     color: white;
     font-family: 'Arial Black', sans-serif;
     font-size: 16px;
@@ -82,25 +92,26 @@ body {
     z-index: 10;
     max-width: 0;
     opacity: 0;
-    transform: translateX(40px); /* Pousse le texte sous l'icône (vers la droite) */
+    transform: translateX(40px);
     transition: all 0.5s ease-in-out;
-    gap: 20px
 }
 
-.logpose-text  a:hover {
-    cursor: pointer;
+.logpose-text a:hover {
     color: #2a958e;
 }
 
-.logpose-btn:hover .logpose-text {
-    max-width: 250px;
+/* --- C'EST ICI QUE LA MAGIE OPÈRE --- */
+/* Quand la checkbox (avant le btn) est cochée, on change le style du bouton voisin (+) */
+
+#toggle-logpose:checked + .logpose-btn .logpose-text {
+    max-width: 500px;
     opacity: 1;
-    margin-right: 20px; /* Espace entre le texte et l'icône */
+    margin-right: 20px;
     margin-left: 10px;
     transform: translateX(0);
 }
 
-.logpose-btn:hover .logpose-icon {
+#toggle-logpose:checked + .logpose-btn .logpose-icon {
     transform: rotate(-360deg);
 }
 
@@ -109,11 +120,13 @@ a {
     text-decoration: none;
 }
 
+
 .video-section iframe {
     border-radius: 15px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
     border: 3px solid #5d4037;
     max-width: 100%;
+    aspect-ratio: 16/9;
 }
 
 .inscription-form-container {
