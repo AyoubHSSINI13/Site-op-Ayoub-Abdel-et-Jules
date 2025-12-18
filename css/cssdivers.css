@@ -114,6 +114,7 @@ a {
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
     border: 3px solid #5d4037;
     max-width: 100%;
+    aspect-ratio: 16/9
 }
 
 .inscription-form-container {
