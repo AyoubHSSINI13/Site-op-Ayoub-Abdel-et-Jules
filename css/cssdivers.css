@@ -13,13 +13,16 @@ body {
     overflow-x: hidden;
 }
 
+.header {
+    text-align: center;
+    margin-top: 5vh;
+}
+
 #returnhome {
-    width: 20vw;
-    min-width: 80px;
-    position: absolute;
-    top: 5%;
-    left: 30%;
-    cursor: pointer;
+    width: 30%;
+    min-width: 300px;
+    max-width: 600px;
+    height: auto;
 }
 
 .container-pirate {
