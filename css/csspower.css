@@ -272,7 +272,7 @@ right: 25%;
     width: 75vw;         /* 70% de la largeur de l'écran */
     max-height: 27vh;    
     overflow-y: auto;    /* scroll interne si le texte dépasse */
-    padding: 7;
+    padding: 7px;
     font-size: 0.9rem;
   }
   .box::-webkit-scrollbar {
