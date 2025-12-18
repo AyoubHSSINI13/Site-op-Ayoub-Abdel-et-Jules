@@ -1,26 +1,8 @@
-<<<<<<< HEAD
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body {
-    font-family: century, Arial, sans-serif;
-    color: #fff;
-}
-
-header {
-    height: 100vh;             
-    width: 100%;
-    background-image: url("/images/imagesMarine/BackG.Marine.png");
-    background-size: cover;     
-    background-position: center;
-=======
 body{
-    background-image: url(/images/mf.webp); ;
+    background-image: url(/images/ImagesMarine/mf.webp);
     background-size: cover;
->>>>>>> 452c154ee125d2ca053e1d91f8c8273f9f7812d1
+    background-attachment: fixed; /*Scroll avec background immobile */
     background-repeat: no-repeat;
     position: relative;
     display: flex;
