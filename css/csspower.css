@@ -25,14 +25,20 @@ html, body {
   background-attachment: fixed;
 }
 
-
-
-
 .toggle {
-  position: absolute;
+  position: fixed;   /* important */
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
   opacity: 0;
-  pointer-events: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
+
+
+
 .POWER {
   position: relative;
   min-height: 200vh;   /* 2 hauteurs d'écran, donc on peut scroller */
@@ -56,6 +62,12 @@ html, body {
   object-fit: cover;
   display: block;
 }
+.img-rect {
+  width: 30vw;       /* grande image mais pas toute la largeur */
+  max-width: 450px;
+  height: auto;
+  display: block;
+}
 
 
 /* images */
@@ -67,9 +79,9 @@ html, body {
 .icone6 { top: 137%; right: 5%;}
 .icone7 {
   position: absolute;
-  top: 60%;         /* sous l’écran */
+  top: 53%;         /* sous l’écran */
   left: 47%;
-  transform: translateX(-100%);
+  transform: translateX(-50%);
   cursor: pointer;
 }
 .icone5-img {
@@ -78,13 +90,7 @@ html, body {
 }
 
 
-.img-rect {
-  height: 400px;    
-  width: auto;      
-  max-width: 30vw;  
-  object-fit: cover; /* recadre si besoin */
-  display: block;
-}
+
 
 
 .box {
@@ -236,14 +242,22 @@ html, body {
   bottom: 9%;        
   left: 2%;      
 }
+ /* Icône 7 plus petite sur mobile */
+.icone7 {
+width: 36vw;      /* ou 20vw, teste ce qui te plaît */
+height: 90vw;
+
+top: 65%;        /* garde ta position actuelle si tu en as une */
+right: 25%;
+  }
 
 
   /* Boîtes : 70% largeur, max 20% hauteur */
   .box {
     width: 75vw;         /* 70% de la largeur de l'écran */
-    max-height: 30vh;    
+    max-height: 27vh;    
     overflow-y: auto;    /* scroll interne si le texte dépasse */
-    padding: 7px 7px;
+    padding: 7;
     font-size: 0.9rem;
   }
   .box::-webkit-scrollbar {
@@ -256,32 +270,35 @@ html, body {
   margin: 0; /*bordure entre le texte et la boxe */
 }
 .box1 {
-    top: 3%;
+    top: 8%;
     right: 2%;
     padding: 7px 7px;
-    max-height: none;      
-    overflow-y: visible;   /* pas besoin de scroll interne */
+    max-height: 28vw;      
   }
 
 
   .box2 {
-    bottom: 34%;
-    left: 1%;
+    top: 21%;       
+    left: 5%;
+    width: 70vw;     
+    padding: 4px 6px;
+    max-height: 30vh;
+    overflow-y: auto;  
   }
 
 
 .box3 {
-    bottom: 1%;
+    top: 42%;
     right: 2%;
   }
 .box4 {
   position: absolute;
-  top: 106%;        
+  top: 100%;        
   right: 18%;    
 }
 .box5 {
   position: absolute;
-  top: 121%;        
+  top: 118%;        
   left: 18%;    
 }
 .box6 {
@@ -291,8 +308,8 @@ html, body {
 }
 .box7 {
   position: absolute;
-  top: 90%;        
-  left: 24%;    
+  top: 82%;        
+  left: 10%;    
 }
 }
 
