@@ -203,6 +203,30 @@ body {
     transform: translateY(-2px);
 }
 
+
+.socialMedia {
+    /* Fixe le bloc par rapport à la fenêtre du navigateur */
+    position: fixed;
+    bottom: 20px; /* Distance du bas */
+    left: 20px;   /* Distance de la gauche */
+    
+    /* Flexbox pour aligner les icônes verticalement ou horizontalement */
+    display: flex;
+    flex-direction: column; /* Change en 'row' pour les mettre côte à côte */
+    gap: 15px;             /* Espace entre chaque icône */
+    z-index: 1000;         /* S'assure que les icônes passent devant le reste du contenu */
+}
+
+.socialMedia img {
+    width: 40px;           /* Taille de tes icônes */
+    height: auto;
+    transition: transform 0.3s ease; /* Petit effet au survol */
+}
+
+.socialMedia img:hover {
+    transform: scale(1.1); /* L'icône grossit légèrement au survol */
+}
+
 @media (max-width: 1100px) {
     .container-pirate {
         flex-direction: column;
