@@ -1,3 +1,10 @@
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 body {
     background-image: url(/images/imgDiverse/MapOP.webp);
     background-attachment: fixed;
@@ -5,12 +12,12 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
-    margin: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
     font-family: sans-serif;
+}
+
+img, iframe, video {
     max-width: 100%;
-    overflow-x: hidden;
+    height: auto;
 }
 
 .header {
@@ -36,6 +43,7 @@ body {
     box-sizing: border-box;
     flex-wrap: wrap;
     margin-top: 50px;
+    width: 100%;
 }
 
 a {
@@ -129,7 +137,9 @@ a {
     border-radius: 15px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
     border: 3px solid #5d4037;
+    width: 100%;
     max-width: 100%;
+    height: auto;
     aspect-ratio: 16/9
 }
 
@@ -137,6 +147,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .transparent-form {
@@ -145,9 +156,10 @@ a {
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     width: 100%;
-    min-width: 350px;
+    min-width: 250px;
     max-width: 400px;
     color: white;
+    box-sizing: border-box;
 }
 
 .transparent-form h2 {
@@ -199,6 +211,7 @@ a {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .faction-label input[type="radio"] {
@@ -245,29 +258,26 @@ a {
     transform: translateY(-2px);
 }
 
-
 .socialMedia {
-    /* Fixe le bloc par rapport à la fenêtre du navigateur */
     position: fixed;
-    bottom: 20px; /* Distance du bas */
-    left: 20px;   /* Distance de la gauche */
-    
-    /* Flexbox pour aligner les icônes verticalement ou horizontalement */
+    bottom: 20px;
+    left: 20px;
     display: flex;
-    flex-direction: column; /* Change en 'row' pour les mettre côte à côte */
-    gap: 15px;             /* Espace entre chaque icône */
-    z-index: 1000;         /* S'assure que les icônes passent devant le reste du contenu */
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
 }
 
 .socialMedia img {
-    width: 3vw;           /* Taille de tes icônes */
+    width: 3vw;
+    min-width: 30px;
     height: auto;
     transition: transform 0.3s ease;
     display: flex;
 }
 
 .socialMedia img:hover {
-    transform: scale(1.1); /* L'icône grossit légèrement au survol */
+    transform: scale(1.1);
 }
 
 @media (max-width: 1100px) {
@@ -297,9 +307,9 @@ a {
     }
 
     #panneauretour {
-        width: 30%;
-        min-width: 300px;
-        max-width: 600px;
+        width: 80%;
+        min-width: auto;
+        max-width: 100%;
         height: auto;
     }
 }
