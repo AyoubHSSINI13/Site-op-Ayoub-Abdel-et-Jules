@@ -1,87 +1,115 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rejoins l'aventure One Piece ! Inscris-toi, choisis ton camp entre Pirate et Marine.">
+    <meta name="description"
+        content="Rejoins l'aventure One Piece ! Inscris-toi, choisis ton camp entre Pirate et Marine.">
     <link rel="stylesheet" href="/css/cssdivers.css">
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <title>One Piece - Rejoins l'équipage</title>
 </head>
-<body>
-<main>
-    <div class="header">
-        <a href="/index.html"><img src="/images/imgMarineSunny/logoOp.webp" alt="Retour accueil" id="returnhome"></a>
-    </div>
 
-    <div class="logpose-wrapper">
-        <input type="checkbox" id="menu-toggle">
-
-        <div class="logpose-menu">
-            <a href="/html/marinevspirates.html">PERSONNAGES</a>
-            <a href="/html/haki.html">POUVOIRS</a>
+<body >
+    <main>
+        <div class="header">
+            <a href="/index.html"><img src="/images/imgMarineSunny/logoOp.webp" alt="Retour accueil"
+                    id="returnhome"></a>
         </div>
 
-        <label for="menu-toggle" class="logpose-icon-btn">
-            <img src="/images/imgDiverse/logpose.webp" alt="Log Pose" class="logpose-icon" height="60" width="60">
-        </label>
-    </div>
-    <div class="container-pirate">
+        <div class="logpose-wrapper">
+            <input type="checkbox" id="menu-toggle">
 
-        <div class="video-section">
-            <iframe 
-                width="560" height="315" loading="lazy"
-                src="https://www.youtube-nocookie.com/embed/JMwp0-0cBGQ?mute=1&controls=0&playsinline=1&loop=1&playlist=JMwp0-0cBGQ" 
-                title="L'exécution de Gol D. Roger" 
-                style="border: 0;" allowfullscreen>
-            </iframe>
+            <div class="logpose-menu">
+                <a href="/html/marinevspirates.html">PERSONNAGES</a>
+                <a href="/html/haki.html">POUVOIRS</a>
+            </div>
+
+            <label for="menu-toggle" class="logpose-icon-btn">
+                <img src="/images/imgDiverse/logpose.webp" alt="Log Pose" class="logpose-icon" height="60" width="60">
+            </label>
         </div>
+        <div class="container-pirate">
 
-        <div class="inscription-form-container">
-            <form action="https://formspree.io/f/xovgokpz" method="POST" class="transparent-form">
-                <h2>Rejoins l'aventure !</h2>
+            <div class="video-section">
+                <iframe width="560" height="315" loading="lazy"
+                    src="https://www.youtube-nocookie.com/embed/JMwp0-0cBGQ?mute=1&controls=0&playsinline=1&loop=1&playlist=JMwp0-0cBGQ"
+                    title="L'exécution de Gol D. Roger" frameborder="0" allowfullscreen>
+                </iframe>
+            </div>
 
-                <div class="input-group">
-                    <label for="pseudo">Pseudo :</label>
-                    <input type="text" id="pseudo" name="pseudo" required placeholder="Monkey D. Luffy">
-                </div>
+            <div class="inscription-form-container">
+                <form action="https://formspree.io/f/xovgokpz" method="POST" class="transparent-form">
+                    <h2>Rejoins l'aventure !</h2>
 
-                <div class="input-group">
-                    <label for="email">Email :</label>
-                    <input type="email" id="email" name="email" required placeholder="roi.des.pirates@grandline.com">
-                </div>
-
-                <div class="faction-choice-container">
-                    <p class="faction-title">Choisis ton camp :</p>
-                    <div class="faction-options">
-                        <label class="faction-label pirate-option">
-                            <input type="radio" name="faction" value="pirate" checked>
-                            <span class="faction-custom-radio">☠️ Pirate</span>
-                        </label>
-                        <label class="faction-label marine-option">
-                            <input type="radio" name="faction" value="marine">
-                            <span class="faction-custom-radio">⚓ Marine</span>
-                        </label>
+                    <div class="input-group">
+                        <label for="pseudo">Pseudo :</label>
+                        <input type="text" id="pseudo" name="pseudo" required placeholder="Monkey D. Luffy">
                     </div>
-                </div>
 
-                <button type="submit" class="submit-btn">S'inscrire</button>
-            </form>
+                    <div class="input-group">
+                        <label for="email">Email :</label>
+                        <input type="email" id="email" name="email" required
+                            placeholder="roi.des.pirates@grandline.com">
+                    </div>
+
+                    <div class="faction-choice-container">
+                        <p class="faction-title">Choisis ton camp :</p>
+                        <div class="faction-options">
+                            <label class="faction-label pirate-option">
+                                <input type="radio" name="faction" value="pirate" checked>
+                                <span class="faction-custom-radio">☠️ Pirate</span>
+                            </label>
+                            <label class="faction-label marine-option">
+                                <input type="radio" name="faction" value="marine">
+                                <span class="faction-custom-radio">⚓ Marine</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">S'inscrire</button>
+                </form>
+            </div>
+
         </div>
 
-    </div> 
+        <div class="socialMedia">
+            <div class="X">
+                <a href="https://x.com/Eiichiro_Staff"><img src="/images/imgDiverse/X.webp" alt="X"></a>
+            </div>
+            <div class="Instagram">
+                <a href="https://www.instagram.com/onepiece_staff/?hl=fr"><img src="/images/imgDiverse/Insta.webp"
+                        alt="Instagram"></a>
+            </div>
+            <div class="Mail">
+                <a href="mailto:oda@shueisha.co.jp"><img src="/images/imgDiverse/Mail.webp" alt="Mail"></a>
+            </div>
 
-    <div class="socialMedia">
-        <div class="X">
-            <a href="https://x.com/Eiichiro_Staff"><img src="/images/imgDiverse/X.webp" alt="X"></a>
+            <input type="checkbox" id="toggle-info" class="toggle">
+            <label for="toggle-info" class="icone icone-info">
+                <img src="/images/imgDiverse/Teach.webp" alt="Informations légales du site" class="img-icone">
+            </label>
+
+            <div class="box" id="info-box">
+                <p>
+                    Ce site est un projet étudiant à but non lucratif, réalisé dans un cadre pédagogique.
+                Il n'est ni affilié ni approuvé par les ayants droit officiels de l'œuvre <em>One Piece</em>.
+                <em>One Piece</em> est écrit et illustré par Eiichiro Oda, et publié par Shueisha.
+                L'adaptation animée est produite par Toei Animation.
+                Tous les droits sur l'univers, les personnages et les éléments narratifs sont réservés à leurs ayants
+                droit respectifs.
+                Certaines images de ce site proviennent de Pinterest et restent la propriété exclusive de leurs auteurs
+                et ayants droit.
+                Les crédits détaillés  peuvent être fournis sur demande !
+                Plusieurs visuels ont été générés à l'aide de l'outil Gemini (intelligence artificielle générative).
+                Ces images sont utilisées uniquement à des fins pédagogiques dans le cadre de ce projet.
+                Si un titulaire de droits souhaite la modification ou le retrait d’un contenu, il peut en faire la
+                demande à l'adresse mail : julespometpro@gmail.com.
+                Ainsi le contenu concerné sera remplacer ou supprimé dans les plus brefs délais.
+                </p>
+            </div>
         </div>
-        <div class="Instagram">
-            <a href="https://www.instagram.com/onepiece_staff/?hl=fr"><img src="/images/imgDiverse/Insta.webp" alt="Instagram"></a>
-        </div>
-        <div class="Mail">
-            <a href="mailto:oda@shueisha.co.jp"><img src="/images/imgDiverse/Mail.webp" alt="Mail"></a>
-        </div>
-    </div>
-</main>
+    </main>
 </body>
 </html>
