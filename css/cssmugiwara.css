@@ -8,20 +8,35 @@
 body {
     font-family: century, Arial, sans-serif;
     color: #fff;
-}
-
-header {
-    height: 100vh;             
-    width: 100%;
-    background-image: url("/images/imgMugiwara/mugiwarabck.webp");
+     background-image: url("/images/imgMugiwara/mugiwarabck.webp");
     background-size: cover;     
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
+main {
+    height: 100vh;             
+    width: 100%;
+    
+}
+
+.header {
+    text-align: center;
+    margin-top: 5vh;
+}
+
+#returnhome {
+    width: 30%;
+    min-width: 300px;
+    max-width: 600px;
+    height: auto;
+}
+
 
 /* Bouton retour */
 .logpose-wrapper {

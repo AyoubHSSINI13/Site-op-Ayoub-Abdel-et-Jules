@@ -1,120 +1,218 @@
-/* --- GLOBAL --- */
-body {
-    background-image: url('/images/imgHome/homeBackground.webp'); 
-    background-attachment: fixed;
-    background-position: center right;
-    background-size: cover;
-    height: 100vh;
-    margin: 0;
-    overflow: hidden; 
-    font-family: sans-serif;
+ body {
+
+background-image: url('/images/imgHome/homeBackground.webp');
+
+background-attachment: fixed;
+
+background-position: center right;
+
+background-size: cover;
+
+height: 100vh;
+
+margin: 0;
+
+overflow: hidden;
+
+font-family: sans-serif;
+
 }
+
 
 /* --- HEADER --- */
+
 .header {
-    text-align: center;
-    margin-top: 5vh;
+
+text-align: center;
+
+margin-top: 5vh;
+
 }
+
 
 #op {
-    width: 30%;
-    min-width: 300px;
-    max-width: 600px;
-    height: auto;
+
+width: 30%;
+
+min-width: 300px;
+
+max-width: 600px;
+
+height: auto;
+
 }
 
-/* ---  (Conteneur du menu) --- */
+
+/* --- (Conteneur du menu) --- */
+
 .woodenSign {
-    position: absolute;
-    left: 5%;
-    width: 35vw; 
-    min-width: 500px;
-    bottom: -10vw;
+
+position: absolute;
+
+left: 5%;
+
+width: 35vw;
+
+min-width: 500px;
+
+bottom: -10vw;
+
 }
+
 
 #woodenSign {
-    width: 100%;
-    display: block;
+
+width: 100%;
+
+display: block;
+
 }
+
 
 /* --- AFFICHES (Les liens) --- */
+
 .affiches {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%); 
-    display: flex;
-    width: 80%; 
-    gap: 10px;
+
+position: absolute;
+
+top: 20%;
+
+left: 50%;
+
+transform: translateX(-50%);
+
+display: flex;
+
+width: 80%;
+
+gap: 10px;
+
 }
+
 
 .affiches a {
-    display: block;
-    transition: transform 0.3s ease-in-out;
-    width: 30%;
+
+display: block;
+
+transition: transform 0.3s ease-in-out;
+
+width: 30%;
+
 }
+
 
 .affiches img {
-    width: 100%; 
-    height: auto; 
-    display: block;
+
+width: 100%;
+
+height: auto;
+
+display: block;
+
 }
+
 
 /* --- INTERACTIONS --- */
+
 .affiches a:hover {
-    transform: scale(1.1); 
-    cursor: pointer;
-    z-index: 10; /* L'élément passe au premier plan */
+
+transform: scale(1.1);
+
+cursor: pointer;
+
+z-index: 10; /* L'élément passe au premier plan */
+
 }
+
 
 /* Rotation des affiches gauche et droite */
+
 .affiches > a:first-child {
-    transform: rotate(-2deg);
+
+transform: rotate(-2deg);
+
 }
+
 .affiches > a:first-child:hover {
-    transform: scale(1.1) rotate(-2deg); 
+
+transform: scale(1.1) rotate(-2deg);
+
 }
+
 
 .affiches > a:last-child {
-    transform: rotate(1.5deg); 
+
+transform: rotate(1.5deg);
+
 }
+
 .affiches > a:last-child:hover {
-    transform: scale(1.1) rotate(1.5deg);
+
+transform: scale(1.1) rotate(1.5deg);
+
 }
+
 
 /* --- RESPONSIVE TABLETTE --- */
+
 @media (max-width: 768px) {
-    body {
-        background-position: 85% center;
-    }
 
-    .woodenSign {
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -30vh; 
-        width: 80%;
-        min-width: auto; 
-    }
+body {
 
-    .affiches {
-        width: 82%;
-        top: 20%;
-        left: 50%;
-    }
+background-position: 85% center;
+
 }
+
+
+.woodenSign {
+
+left: 50%;
+
+transform: translateX(-50%);
+
+bottom: -30vh;
+
+width: 80%;
+
+min-width: auto;
+
+}
+
+
+.affiches {
+
+width: 82%;
+
+top: 20%;
+
+left: 50%;
+
+}
+
+}
+
 
 /* --- RESPONSIVE MOBILE --- */
-@media (max-width: 480px) {
-    .woodenSign {
-        width: 95%;
-        bottom: -20vh; 
-    }
 
-    .affiches {
-        top: 20%;
-        left: 50%;
-        gap: 3px;
-    }
+@media (max-width: 480px) {
+
+.woodenSign {
+
+width: 95%;
+
+bottom: -20vh;
+
 }
 
-/*Page alternative*/
+
+.affiches {
+
+top: 20%;
+
+left: 50%;
+
+gap: 3px;
+
+}
+
+} 
