@@ -38,75 +38,91 @@ body {
     margin-top: 50px;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .logpose-wrapper {
     position: fixed;
     top: 20px;
     right: 20px;
     z-index: 9999;
     display: flex;
+    align-items: center;
     justify-content: flex-end;
 }
 
-.logpose-btn {
-    display: inline-flex;
+#menu-toggle {
+    display: none;
+}
+
+.logpose-menu {
+    display: flex;
     align-items: center;
-    justify-content: flex-end;
-    flex-direction: row-reverse; /* Inverse l'ordre : Texte à gauche, Icône à droite */
+    gap: 20px;
     background-color: #1e5d59;
     border-radius: 50px;
-    padding: 5px;
-    text-decoration: none;
-    position: relative;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    padding: 5px 80px 5px 20px;
+    height: 60px;
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-right: -60px;
     transition: all 0.5s ease-in-out;
+    box-sizing: border-box;
+}
+
+.logpose-menu a {
+    color: white;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.logpose-menu a:hover {
+    color: #2a958e;
+}
+
+.logpose-icon-btn {
+    cursor: pointer;
+    z-index: 20;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    border-radius: 50%;
 }
 
 .logpose-icon {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    position: relative;
-    z-index: 20;
-    flex-shrink: 0;
+    background-color: #1e5d59;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.logpose-text {
-    color: white;
-    font-family: 'Arial Black', sans-serif;
-    font-size: 16px;
-    text-transform: uppercase;
-    white-space: nowrap;
-    overflow: hidden;
+    display: block;
     position: relative;
-    z-index: 10;
-    max-width: 0;
-    opacity: 0;
-    transform: translateX(40px); /* Pousse le texte sous l'icône (vers la droite) */
-    transition: all 0.5s ease-in-out;
-    gap: 20px
+    z-index: 21;
 }
 
-.logpose-text  a:hover {
-    cursor: pointer;
-    color: #2a958e;
+@media (hover: hover) {
+    .logpose-wrapper:hover .logpose-menu {
+        max-width: 600px;
+        opacity: 1;
+    }
+    
+    .logpose-wrapper:hover .logpose-icon-btn .logpose-icon {
+        transform: rotate(-360deg);
+    }
 }
 
-.logpose-btn:hover .logpose-text {
-    max-width: 250px;
+#menu-toggle:checked ~ .logpose-menu {
+    max-width: 600px;
     opacity: 1;
-    margin-right: 20px; /* Espace entre le texte et l'icône */
-    margin-left: 10px;
-    transform: translateX(0);
 }
 
-.logpose-btn:hover .logpose-icon {
+#menu-toggle:checked ~ .logpose-icon-btn .logpose-icon {
     transform: rotate(-360deg);
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
 }
 
 .video-section iframe {
