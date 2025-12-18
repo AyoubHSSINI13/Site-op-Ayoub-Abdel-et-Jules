@@ -1,5 +1,5 @@
 body {
-    background-image: url(/images/ImagesMarineSunny/PvsM.webp);
+    background-image: url(/images/imgMarineSunny/PvsM.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center; 
@@ -65,7 +65,7 @@ h2 {
 @media (max-width: 768px) {
 
     body{
-        background-image: url(/images/ImagesMarineSunny/vsTablette.webp);
+        background-image: url(/images/ImgMarineSunny/vsTablet.webp);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center; 
