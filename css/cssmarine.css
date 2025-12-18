@@ -1,8 +1,29 @@
+<<<<<<< HEAD
 
 body{
     background-image: url(/images/ImagesMarine/mf.webp);
     background-size: cover;
     background-attachment: fixed; /*Scroll avec background immobile */
+=======
+/* Reset + base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: century, Arial, sans-serif;
+    color: #fff;
+}
+
+header {
+    height: 100vh;             
+    width: 100%;
+    background-image: url("/images/imagesMarine/BackG.Marine.png");
+    background-size: cover;     
+    background-position: center;
+>>>>>>> 163a25675cd919f3a9322a6e2bc4d538c5e3090d
     background-repeat: no-repeat;
     position: relative;
     display: flex;
@@ -11,15 +32,63 @@ body{
 }
 
 /* Bouton retour */
-.principale {
-    position: absolute;
-    top: 20px;
-    left: 20px;
+.logpose-wrapper {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    justify-content: flex-end;
 }
 
-.principale img {
+.logpose-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #3EBCB3;
+    border-radius: 50px;
+    padding: 5px;
+    text-decoration: none;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.5s ease-in-out;
+}
+
+.logpose-icon {
+    width: 60px;
     height: 60px;
-    cursor: pointer;
+    border-radius: 50%;
+    position: relative;
+    z-index: 20;
+    flex-shrink: 0;
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.logpose-text {
+    color: white;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+    max-width: 0;
+    opacity: 0;
+    transform: translateX(40px);
+    transition: all 0.5s ease-in-out;
+}
+
+.logpose-btn:hover .logpose-text {
+    max-width: 250px;
+    opacity: 1;
+    margin-left: 20px;
+    margin-right: 10px;
+    transform: translateX(0);
+}
+
+.logpose-btn:hover .logpose-icon {
+    transform: rotate(-360deg);
 }
 
 .slideshow-container {
@@ -32,48 +101,68 @@ body{
     transform: translateY(-50%);
     overflow: hidden;
 }
+.numbertext {
+    position: absolute; 
+    top: 20px;
+    left: 20px;
+    color: #f2f2f2;
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    z-index: 5;
+}
 
 .mySlides {
+    display: none; 
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    position: relative;
+}
+
+.mySlides img {
+    max-width: 40%;
+    height: auto;
+    flex-shrink: 0;
+}
+
+/* Zone h1 et texte */
+.textZone {
   display: flex;
   flex-direction: column;   
-  align-items: center;      
-  justify-content: center;  
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.55);
-  border-radius: 15px;
-  text-align: center;       
+  align-items: flex-start;  
+  flex-grow: 1;             
+  text-align: left;
 }
 
-/* Image au centre */
-.mySlides img {
-  max-width: 40%;
-  height: auto;
-  margin-bottom: 20px;
+.mySlides h1{
+    position: static;
+    margin-bottom: 10px;
+    color: #147e8a;           
 }
 
-/* Titre sous l'image */
-.mySlides h1 {
-  font-size: 2.2rem;
-  margin-bottom: 15px;
-}
-
-/* Texte sous le h1 */
 .mySlides .text {
-  font-size: 1rem;
-  line-height: 1.5;
+  position: static;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 100%;
+}
+
+.slide-content {
   max-width: 60%;
 }
-
-
-
 
 .prev,
 .next {
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 95%;
     transform: translateY(-50%);
 }
 
@@ -116,7 +205,6 @@ body{
     background-color: #fff;
 }
 
-/* Effet fade (optionnel) */
 .fade {
     animation-name: fade;
     animation-duration: 0.7s;
@@ -127,7 +215,6 @@ body{
     to   { opacity: 1; }
 }
 
-/* Un peu de responsive simple */
 @media (max-width: 900px) {
     .slideshow-container {
         width: 90%;
