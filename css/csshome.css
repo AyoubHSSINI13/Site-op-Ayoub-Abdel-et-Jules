@@ -1,218 +1,219 @@
  body {
 
-background-image: url('/images/imgHome/homeBackground.webp');
+     background-image: url('/images/imgHome/homeBackground.webp');
 
-background-attachment: fixed;
+     background-attachment: fixed;
 
-background-position: center right;
+     background-position: center right;
 
-background-size: cover;
+     background-size: cover;
 
-height: 100vh;
+     height: 100vh;
 
-margin: 0;
+     margin: 0;
 
-overflow: hidden;
+     overflow: hidden;
 
-font-family: sans-serif;
+     font-family: sans-serif;
 
-}
+ }
 
 
-/* --- HEADER --- */
+ /* --- HEADER --- */
 
-.header {
+ .header {
 
-text-align: center;
+     text-align: center;
 
-margin-top: 5vh;
+     margin-top: 5vh;
 
-}
+ }
 
 
-#op {
+ #op {
 
-width: 30%;
+     width: 30%;
 
-min-width: 300px;
+     min-width: 300px;
 
-max-width: 600px;
+     max-width: 600px;
 
-height: auto;
+     height: auto;
 
-}
+ }
 
 
-/* --- (Conteneur du menu) --- */
+ /* --- (Conteneur du menu) --- */
 
-.woodenSign {
+ .woodenSign {
 
-position: absolute;
+     position: absolute;
 
-left: 5%;
+     left: 5%;
 
-width: 35vw;
+     width: 35vw;
 
-min-width: 500px;
+     min-width: 500px;
 
-bottom: -10vw;
+     bottom: -10vw;
 
-}
+ }
 
 
-#woodenSign {
+ #woodenSign {
 
-width: 100%;
+     width: 100%;
 
-display: block;
+     display: block;
 
-}
+ }
 
 
-/* --- AFFICHES (Les liens) --- */
+ /* --- AFFICHES (Les liens) --- */
 
-.affiches {
+ .affiches {
 
-position: absolute;
+     position: absolute;
 
-top: 20%;
+     top: 20%;
 
-left: 50%;
+     left: 50%;
 
-transform: translateX(-50%);
+     transform: translateX(-50%);
 
-display: flex;
+     display: flex;
 
-width: 80%;
+     width: 80%;
 
-gap: 10px;
+     gap: 10px;
 
-}
+ }
 
 
-.affiches a {
+ .affiches a {
 
-display: block;
+     display: block;
 
-transition: transform 0.3s ease-in-out;
+     transition: transform 0.3s ease-in-out;
 
-width: 30%;
+     width: 30%;
 
-}
+ }
 
 
-.affiches img {
+ .affiches img {
 
-width: 100%;
+     width: 100%;
 
-height: auto;
+     height: auto;
 
-display: block;
+     display: block;
 
-}
+ }
 
 
-/* --- INTERACTIONS --- */
+ /* --- INTERACTIONS --- */
 
-.affiches a:hover {
+ .affiches a:hover {
 
-transform: scale(1.1);
+     transform: scale(1.1);
 
-cursor: pointer;
+     cursor: pointer;
 
-z-index: 10; /* L'élément passe au premier plan */
+     z-index: 10;
+     /* L'élément passe au premier plan */
 
-}
+ }
 
 
-/* Rotation des affiches gauche et droite */
+ /* Rotation des affiches gauche et droite */
 
-.affiches > a:first-child {
+ .affiches>a:first-child {
 
-transform: rotate(-2deg);
+     transform: rotate(-2deg);
 
-}
+ }
 
-.affiches > a:first-child:hover {
+ .affiches>a:first-child:hover {
 
-transform: scale(1.1) rotate(-2deg);
+     transform: scale(1.1) rotate(-2deg);
 
-}
+ }
 
 
-.affiches > a:last-child {
+ .affiches>a:last-child {
 
-transform: rotate(1.5deg);
+     transform: rotate(1.5deg);
 
-}
+ }
 
-.affiches > a:last-child:hover {
+ .affiches>a:last-child:hover {
 
-transform: scale(1.1) rotate(1.5deg);
+     transform: scale(1.1) rotate(1.5deg);
 
-}
+ }
 
 
-/* --- RESPONSIVE TABLETTE --- */
+ /* --- RESPONSIVE TABLETTE --- */
 
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
 
-body {
+     body {
 
-background-position: 85% center;
+         background-position: 85% center;
 
-}
+     }
 
 
-.woodenSign {
+     .woodenSign {
 
-left: 50%;
+         left: 50%;
 
-transform: translateX(-50%);
+         transform: translateX(-50%);
 
-bottom: -30vh;
+         bottom: -30vh;
 
-width: 80%;
+         width: 80%;
 
-min-width: auto;
+         min-width: auto;
 
-}
+     }
 
 
-.affiches {
+     .affiches {
 
-width: 82%;
+         width: 82%;
 
-top: 20%;
+         top: 20%;
 
-left: 50%;
+         left: 50%;
 
-}
+     }
 
-}
+ }
 
 
-/* --- RESPONSIVE MOBILE --- */
+ /* --- RESPONSIVE MOBILE --- */
 
-@media (max-width: 480px) {
+ @media (max-width: 480px) {
 
-.woodenSign {
+     .woodenSign {
 
-width: 95%;
+         width: 95%;
 
-bottom: -20vh;
+         bottom: -20vh;
 
-}
+     }
 
 
-.affiches {
+     .affiches {
 
-top: 20%;
+         top: 20%;
 
-left: 50%;
+         left: 50%;
 
-gap: 3px;
+         gap: 3px;
 
-}
+     }
 
-} 
+ }

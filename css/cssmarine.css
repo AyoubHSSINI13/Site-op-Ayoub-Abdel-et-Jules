@@ -7,10 +7,10 @@
 
 
 body {
-      height: 100vh;            
+    height: 100vh;
     width: 100%;
     background-image: url("/images/imgMarine/BackgroundMarine.webp");
-    background-size: cover;    
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -23,9 +23,9 @@ body {
 }
 
 main {
-    height: 100vh;             
+    height: 100vh;
     width: 100%;
-    
+
 }
 
 .header {
@@ -140,6 +140,7 @@ a {
     transform: translateY(-50%);
     overflow: hidden;
 }
+
 .numbertext {
     position: absolute;
     top: 20px;
@@ -176,31 +177,31 @@ a {
 
 /* Zone h1 et texte */
 .textZone {
-  display: flex;
-  flex-direction: column;  
-  align-items: flex-start;  
-  flex-grow: 1;            
-  text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+    text-align: left;
 }
 
 
-.mySlides h1{
+.mySlides h1 {
     position: static;
     margin-bottom: 10px;
-    color: #147e8a;          
+    color: #147e8a;
 }
 
 
 .mySlides .text {
-  position: static;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  max-width: 100%;
+    position: static;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 100%;
 }
 
 
 .slide-content {
-  max-width: 60%;
+    max-width: 60%;
 }
 
 
@@ -265,8 +266,13 @@ a {
 
 
 @keyframes fade {
-    from { opacity: 0.4; }
-    to   { opacity: 1; }
+    from {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 
@@ -313,4 +319,3 @@ a {
 .socialMedia img:hover {
     transform: scale(1.1);
 }
-

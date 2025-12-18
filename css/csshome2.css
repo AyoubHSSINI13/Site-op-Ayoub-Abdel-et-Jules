@@ -15,7 +15,7 @@
     border-radius: 50px;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     transition: all 0.4s ease;
 }
 
@@ -24,39 +24,48 @@ body {
     /* Dégradé de type Marine : Bleu nuit vers Bleu océan */
     background: linear-gradient(135deg, #051937, #004d7a, #008793, #00bf72);
     background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite; /* Animation douce du fond */
-    
+    animation: gradientBG 15s ease infinite;
+    /* Animation douce du fond */
+
     height: 100vh;
     margin: 0;
-    overflow: hidden; 
+    overflow: hidden;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* --- STYLE ALTERNATIF (DÉGRADÉ PIRATE) --- */
 /* S'active quand on coche la case */
-#style-toggle:checked ~ body {
+#style-toggle:checked~body {
     /* Dégradé Pirate : Noir vers Rouge sang */
     background: linear-gradient(135deg, #000000, #434343, #8e0e00, #1f1c18);
     background-size: 400% 400%;
 }
 
 /* Changements visuels des éléments en mode Pirate */
-#style-toggle:checked ~ .header #op {
+#style-toggle:checked~.header #op {
     filter: drop-shadow(0 0 20px #ff0000) brightness(1.2);
 }
 
-#style-toggle:checked ~ .woodenSign #woodenSign {
+#style-toggle:checked~.woodenSign #woodenSign {
     filter: sepia(1) brightness(0.6) contrast(1.2);
 }
 
-#style-toggle:checked ~ .btn-theme {
+#style-toggle:checked~.btn-theme {
     background: #8e0e00;
     color: white;
     box-shadow: 0 4px 20px rgba(255, 0, 0, 0.4);
@@ -79,7 +88,7 @@ body {
 .woodenSign {
     position: absolute;
     left: 5%;
-    width: 35vw; 
+    width: 35vw;
     min-width: 500px;
     bottom: -10vw;
     transition: all 0.5s ease;
@@ -95,9 +104,9 @@ body {
     position: absolute;
     top: 20%;
     left: 50%;
-    transform: translateX(-50%); 
+    transform: translateX(-50%);
     display: flex;
-    width: 80%; 
+    width: 80%;
     gap: 10px;
 }
 
@@ -108,8 +117,8 @@ body {
 }
 
 .affiches img {
-    width: 100%; 
-    height: auto; 
+    width: 100%;
+    height: auto;
     display: block;
 }
 
@@ -120,17 +129,25 @@ body {
 }
 
 /* Rotations */
-.affiches > a:first-child { transform: rotate(-2deg); }
-.affiches > a:last-child { transform: rotate(1.5deg); }
+.affiches>a:first-child {
+    transform: rotate(-2deg);
+}
+
+.affiches>a:last-child {
+    transform: rotate(1.5deg);
+}
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
     .woodenSign {
         left: 50%;
         transform: translateX(-50%);
-        bottom: -30vh; 
+        bottom: -30vh;
         width: 80%;
-        min-width: auto; 
+        min-width: auto;
     }
-    .affiches { width: 82%; }
+
+    .affiches {
+        width: 82%;
+    }
 }

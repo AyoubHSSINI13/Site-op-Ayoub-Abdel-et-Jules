@@ -2,7 +2,7 @@ body {
     background-image: url(/images/imgMarineSunny/PvsM.webp);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center; 
+    background-position: center;
     height: 100vh;
     margin: 0;
     overflow: hidden;
@@ -76,12 +76,12 @@ h2 {
 
 @media (max-width: 768px) {
 
-    body{
+    body {
         background-image: url(/images/imgMarineSunny/vsTablet.webp);
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: center; 
-        
+        background-position: center;
+
         overflow: hidden;
     }
 
@@ -113,11 +113,11 @@ h2 {
 
 @media (max-width: 480px) {
 
-    body{
+    body {
         background-image: url(/images/imgMarineSunny/vsTablet.webp);
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: center; 
+        background-position: center;
         overflow: hidden;
     }
 
@@ -225,4 +225,3 @@ h2 {
 #menu-toggle:checked~.logpose-icon-btn .logpose-icon {
     transform: rotate(-360deg);
 }
-

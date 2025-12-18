@@ -341,15 +341,15 @@ a {
     font-size: 0.9rem;
   }
 
-    .box::-webkit-scrollbar {
-      width: 0;
-      /* rend la scrollbar quasi invisible */
-    }
+  .box::-webkit-scrollbar {
+    width: 0;
+    /* rend la scrollbar quasi invisible */
+  }
 
-    .box {
-      scrollbar-width: none;
-      /* pareil mais pour Firefox */
-    }
+  .box {
+    scrollbar-width: none;
+    /* pareil mais pour Firefox */
+  }
 
   .box p {
     margin: 0;
@@ -402,11 +402,12 @@ a {
     top: 82%;
     left: 10%;
   }
-.back-to-top {
+
+  .back-to-top {
     width: 38px;
     height: 38px;
     left: 12px;
-    top : 27px;
+    top: 27px;
   }
 
   .back-to-top-icon {
