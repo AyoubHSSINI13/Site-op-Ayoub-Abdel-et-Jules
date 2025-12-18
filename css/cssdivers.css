@@ -264,7 +264,7 @@ body {
         background-position: 60% center;
     }
 
-    header{
+    #panneauretour {
         width: 30%;
         min-width: 300px;
         max-width: 600px;
