@@ -102,7 +102,7 @@ h2 {
 @media (max-width: 480px) {
 
     body{
-        background-image: url(/images/ImagesMarineSunny/vsTablette.png);
+        background-image: url(/images/ImagesMarineSunny/vsTablette.webp);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center; 

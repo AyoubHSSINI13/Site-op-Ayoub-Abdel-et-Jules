@@ -91,14 +91,15 @@ body {
     .pancarte {
         left: 50%;
         transform: translateX(-50%);
-        bottom: -5vh; 
+        bottom: -30vh; 
         width: 80%;
         min-width: auto; 
     }
 
     .affiches {
         width: 82%;
-        top: 22%; 
+        top: 20%;
+        left: 50%;
     }
 }
 
@@ -106,11 +107,12 @@ body {
 @media (max-width: 480px) {
     .pancarte {
         width: 95%;
-        bottom: -10vh; 
+        bottom: -20vh; 
     }
 
     .affiches {
-        top: 23%;
-        gap: 5px;
+        top: 20%;
+        left: 50%;
+        gap: 3px;
     }
 }
