@@ -1,6 +1,6 @@
 /* --- GLOBAL --- */
 body {
-    background-image: url('/images/imagesAccueil/backgroundaccueil.webp'); 
+    background-image: url('/images/imgHome/homeBackground.webp'); 
     background-attachment: fixed;
     background-position: center right;
     background-size: cover;
@@ -23,8 +23,8 @@ body {
     height: auto;
 }
 
-/* --- PANCARTE (Conteneur du menu) --- */
-.pancarte {
+/* ---  (Conteneur du menu) --- */
+.woodenSign {
     position: absolute;
     left: 5%;
     width: 35vw; 
@@ -32,7 +32,7 @@ body {
     bottom: -10vw;
 }
 
-#pancarte {
+#woodenSign {
     width: 100%;
     display: block;
 }
@@ -88,7 +88,7 @@ body {
         background-position: 85% center;
     }
 
-    .pancarte {
+    .woodenSign {
         left: 50%;
         transform: translateX(-50%);
         bottom: -30vh; 
@@ -105,7 +105,7 @@ body {
 
 /* --- RESPONSIVE MOBILE --- */
 @media (max-width: 480px) {
-    .pancarte {
+    .woodenSign {
         width: 95%;
         bottom: -20vh; 
     }

@@ -1,5 +1,5 @@
 body {
-    background-image: url(/images/ImagesDivers/MapOP.avif);
+    background-image: url(/images/imgDiverse/MapOP.webp);
     background-attachment: fixed;
     background-position: center center;
     background-size: cover;
@@ -13,7 +13,7 @@ body {
     overflow-x: hidden;
 }
 
-#panneauretour {
+#returnhome {
     width: 20vw;
     min-width: 80px;
     position: absolute;
