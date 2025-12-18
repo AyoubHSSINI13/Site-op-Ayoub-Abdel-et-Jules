@@ -1,75 +1,78 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rejoins l'aventure One Piece ! Inscris-toi, choisis ton camp entre Pirate et Marine.">
+    <meta name="description"
+        content="Rejoins l'aventure One Piece ! Inscris-toi, choisis ton camp entre Pirate et Marine.">
     <link rel="stylesheet" href="/css/cssdivers.css">
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <title>One Piece - Rejoins l'équipage</title>
 </head>
-<body>
-<main>
-    <div class="header">
-        <a href="/index.html"><img src="/images/imgMarineSunny/logoOp.webp" alt="Retour accueil" id="returnhome"></a>
-    </div>
 
-    <div class="logpose-wrapper">
-        <input type="checkbox" id="menu-toggle">
+<body >
+    <main>
+        <div class="header">
+            <a href="/index.html"><img src="/images/imgMarineSunny/logoOp.webp" alt="Retour accueil"
+                    id="returnhome"></a>
+        </div>
+
+        <div class="logpose-wrapper">
+            <input type="checkbox" id="menu-toggle">
 
         <div class="logpose-menu">
             <a href="/html/marinevspirates.html">PERSONNAGES</a>
-            <a href="/html/power.html">POUVOIRS</a>
+            <a href="/html/haki.html">POUVOIRS</a>
         </div>
 
-        <label for="menu-toggle" class="logpose-icon-btn">
-            <img src="/images/imgDiverse/logpose.webp" alt="Log Pose" class="logpose-icon" height="60" width="60">
-        </label>
-    </div>
-    <div class="container-pirate">
-
-        <div class="video-section">
-            <iframe 
-                width="560" height="315" loading="lazy"
-                src="https://www.youtube-nocookie.com/embed/JMwp0-0cBGQ?mute=1&controls=0&playsinline=1&loop=1&playlist=JMwp0-0cBGQ" 
-                title="L'exécution de Gol D. Roger" 
-                style="border: 0;" allowfullscreen>
-            </iframe>
+            <label for="menu-toggle" class="logpose-icon-btn">
+                <img src="/images/imgDiverse/logpose.webp" alt="Log Pose" class="logpose-icon" height="60" width="60">
+            </label>
         </div>
+        <div class="container-pirate">
 
-        <div class="inscription-form-container">
-            <form action="https://formspree.io/f/xovgokpz" method="POST" class="transparent-form">
-                <h2>Rejoins l'aventure !</h2>
+            <div class="video-section">
+                <iframe width="560" height="315" loading="lazy"
+                    src="https://www.youtube-nocookie.com/embed/JMwp0-0cBGQ?mute=1&controls=0&playsinline=1&loop=1&playlist=JMwp0-0cBGQ"
+                    title="L'exécution de Gol D. Roger" frameborder="0" allowfullscreen>
+                </iframe>
+            </div>
 
-                <div class="input-group">
-                    <label for="pseudo">Pseudo :</label>
-                    <input type="text" id="pseudo" name="pseudo" required placeholder="Monkey D. Luffy">
-                </div>
+            <div class="inscription-form-container">
+                <form action="https://formspree.io/f/xovgokpz" method="POST" class="transparent-form">
+                    <h2>Rejoins l'aventure !</h2>
 
-                <div class="input-group">
-                    <label for="email">Email :</label>
-                    <input type="email" id="email" name="email" required placeholder="roi.des.pirates@grandline.com">
-                </div>
-
-                <div class="faction-choice-container">
-                    <p class="faction-title">Choisis ton camp :</p>
-                    <div class="faction-options">
-                        <label class="faction-label pirate-option">
-                            <input type="radio" name="faction" value="pirate" checked>
-                            <span class="faction-custom-radio">☠️ Pirate</span>
-                        </label>
-                        <label class="faction-label marine-option">
-                            <input type="radio" name="faction" value="marine">
-                            <span class="faction-custom-radio">⚓ Marine</span>
-                        </label>
+                    <div class="input-group">
+                        <label for="pseudo">Pseudo :</label>
+                        <input type="text" id="pseudo" name="pseudo" required placeholder="Monkey D. Luffy">
                     </div>
-                </div>
 
-                <button type="submit" class="submit-btn">S'inscrire</button>
-            </form>
+                    <div class="input-group">
+                        <label for="email">Email :</label>
+                        <input type="email" id="email" name="email" required
+                            placeholder="roi.des.pirates@grandline.com">
+                    </div>
+
+                    <div class="faction-choice-container">
+                        <p class="faction-title">Choisis ton camp :</p>
+                        <div class="faction-options">
+                            <label class="faction-label pirate-option">
+                                <input type="radio" name="faction" value="pirate" checked>
+                                <span class="faction-custom-radio">☠️ Pirate</span>
+                            </label>
+                            <label class="faction-label marine-option">
+                                <input type="radio" name="faction" value="marine">
+                                <span class="faction-custom-radio">⚓ Marine</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">S'inscrire</button>
+                </form>
+            </div>
+
         </div>
-
-    </div> 
 
     <div class="socialMedia">
         <div class="X">
@@ -79,7 +82,7 @@
             <a href="https://www.instagram.com/onepiece_staff/?hl=fr"><img src="/images/imgDiverse/Insta.webp" alt="Instagram"></a>
         </div>
         <div class="Mail">
-            <a href="mailto:ayoub.hssini@etu.univ-amu.fr"><img src="/images/imgDiverse/Mail.webp" alt="Mail"></a>
+            <a href="mailto:oda@shueisha.co.jp"><img src="/images/imgDiverse/Mail.webp" alt="Mail"></a>
         </div>
     </div>
 </main>
