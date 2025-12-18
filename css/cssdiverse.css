@@ -338,15 +338,16 @@ a {
     display: none;
     z-index: 999;
 }
-  .box::-webkit-scrollbar {
+
+.box::-webkit-scrollbar {
     width: 0;
     /* rend la scrollbar  invisible */
-  }
+}
 
-  .box {
+.box {
     scrollbar-width: none;
     /* pareil mais pour Firefox */
-  }
+}
 
 /* Affichage au clic sur l’icône */
 #toggle-info:checked~.icone-info+#info-box {
