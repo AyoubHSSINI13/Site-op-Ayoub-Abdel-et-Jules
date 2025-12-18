@@ -1,22 +1,43 @@
+.header {
+    text-align: center;
+    margin-top: 5vh;
+}
+
+
+
+
+#op {
+    width: 30%;
+    min-width: 300px;
+    max-width: 600px;
+    height: auto;
+}
+
+
 html, body {
   margin: 0;
   padding: 0;
-}
-
-/*fond écran*/
-.page {
   position: relative;
   min-height: 100vh;
-  background-image: url("../images/ImagesHaki/BackG.Haki.webp"); 
+  background-image: url("../images/ImagesHaki/BackG.Haki.webp");
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
+
+
+
 
 .toggle {
   position: absolute;
   opacity: 0;
   pointer-events: none;
 }
+.POWER {
+  position: relative;
+  min-height: 200vh;   /* 2 hauteurs d'écran, donc on peut scroller */
+}
+
 
 .icone {
   position: absolute;
@@ -27,11 +48,44 @@ html, body {
   background-position: center;
   cursor: pointer;
 }
+/* image dans le label */
+.img-icone {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
 
 /* images */
-.icone1 { top: 7%; left: 5%;  background-image: url("../images/ImagesHaki/HakiObservation.webp"); }
-.icone2 { bottom: 43%; right: 5%; background-image: url("../images/ImagesHaki/HakiArmement.webp");   }
-.icone3 { bottom: 10%; left: 5%; background-image: url("../images/ImagesHaki/HakiDesRois.webp");    }
+.icone1 { top: 10%; left: 5%;}
+.icone2 { top: 22%; right: 5%;}
+.icone3 { top: 40%; left: 5%;}
+.icone4 { top: 105%; right: 5%;}
+.icone5 { top: 120%; left: 5%;}
+.icone6 { top: 137%; right: 5%;}
+.icone7 {
+  position: absolute;
+  top: 60%;         /* sous l’écran */
+  left: 47%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+.icone5-img {
+  transform: scale(1.5);   /* agrandit le zoan */
+  transform-origin: center;
+}
+
+
+.img-rect {
+  height: 400px;    
+  width: auto;      
+  max-width: 30vw;  
+  object-fit: cover; /* recadre si besoin */
+  display: block;
+}
+
 
 .box {
   position: absolute;
@@ -48,18 +102,38 @@ html, body {
 }
 .box1 {
   position: absolute;
-  top: 10%;        
-  left: 18%;       
+  top: 11%;        
+  left: 18%;      
 }
 .box2 {
   position: absolute;
-  bottom: 45%;         
-  right: 18%;       
+  top: 23%;        
+  right: 18%;      
 }
 .box3 {
   position: absolute;
-  bottom: 6%;        
-  left: 18%;     
+  top: 39%;        
+  left: 18%;    
+}
+.box4 {
+  position: absolute;
+  top: 106%;        
+  right: 18%;    
+}
+.box5 {
+  position: absolute;
+  top: 121%;        
+  left: 18%;    
+}
+.box6 {
+  position: absolute;
+  top: 137%;        
+  right: 18%;    
+}
+.box7 {
+  position: absolute;
+  top: 90%;        
+  left: 24%;    
 }
 .logpose-wrapper {
     position: absolute;
@@ -78,6 +152,7 @@ html, body {
     justify-content: flex-end;
 }
 
+
 .logpose-btn {
     display: inline-flex;
     align-items: center;
@@ -91,6 +166,7 @@ html, body {
     transition: all 0.5s ease-in-out;
 }
 
+
 .logpose-icon {
     width: 60px;
     height: 60px;
@@ -100,6 +176,7 @@ html, body {
     flex-shrink: 0;
     transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
+
 
 .logpose-text {
     color: white;
@@ -116,6 +193,7 @@ html, body {
     transition: all 0.5s ease-in-out;
 }
 
+
 .logpose-btn:hover .logpose-text {
     max-width: 250px;
     opacity: 1;
@@ -124,13 +202,17 @@ html, body {
     transform: translateX(0);
 }
 
+
 .logpose-btn:hover .logpose-icon {
     transform: rotate(-360deg);
 }
 
 
+
+
 /* ---- Version téléphone / tablette ---- */
 @media (max-width: 768px) {
+
 
   /* Icônes 3x plus petites environ */
   .icone {
@@ -142,18 +224,20 @@ html, body {
     .icone1 {
   position: absolute;
   top: 12%;        
-  left: 2%;       
+  left: 2%;      
 }
     .icone2 {
   position: absolute;
-  bottom: 47%;         
-  right: 2%;       
+  bottom: 47%;        
+  right: 2%;      
 }
     .icone3 {
   position: absolute;
   bottom: 9%;        
-  left: 2%;       
+  left: 2%;      
 }
+
+
   /* Boîtes : 70% largeur, max 20% hauteur */
   .box {
     width: 75vw;         /* 70% de la largeur de l'écran */
@@ -167,7 +251,7 @@ html, body {
   }
   .box {
   scrollbar-width: none; /* pareil mais pour Firefox */
-} 
+}
 .box p {
   margin: 0; /*bordure entre le texte et la boxe */
 }
@@ -179,10 +263,12 @@ html, body {
     overflow-y: visible;   /* pas besoin de scroll interne */
   }
 
+
   .box2 {
     bottom: 34%;
     left: 1%;
   }
+
 
   .box3 {
     bottom: 1%;
@@ -190,7 +276,12 @@ html, body {
   }
 }
 
+
 /* affichage au clic */
 #icone1:checked ~ .box1 { display: block; }
 #icone2:checked ~ .box2 { display: block; }
 #icone3:checked ~ .box3 { display: block; }
+#icone4:checked ~ .box4 { display: block; }
+#icone5:checked ~ .box5 { display: block; }
+#icone6:checked ~ .box6 { display: block; }
+#icone7:checked ~ .box7 { display: block; }
