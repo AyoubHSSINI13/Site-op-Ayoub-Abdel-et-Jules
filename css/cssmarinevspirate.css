@@ -1,0 +1,200 @@
+/* ============================================
+   MARINE VS PIRATES — Choose your camp
+   ============================================ */
+
+body {
+  background-image: url(../images/imgMarineSunny/PvsM.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Dramatic vignette */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 30%, rgba(0, 0, 0, 0.6) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+main {
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+}
+
+/* --- VERSUS LAYOUT --- */
+.versus-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(30px, 8vw, 120px);
+  width: 90%;
+}
+
+.camp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s;
+}
+
+.camp-pirate {
+  animation: slideFromLeft 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.camp-marine {
+  animation: slideFromRight 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+@keyframes slideFromLeft {
+  from { opacity: 0; transform: translateX(-80px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideFromRight {
+  from { opacity: 0; transform: translateX(80px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.camp img {
+  width: clamp(120px, 30vh, 400px);
+  height: auto;
+  filter: drop-shadow(0 8px 30px rgba(0, 0, 0, 0.6));
+  transition: filter 0.3s;
+}
+
+.camp:hover {
+  transform: scale(1.08);
+  cursor: pointer;
+}
+
+.camp:hover img {
+  filter: drop-shadow(0 12px 40px rgba(212, 164, 55, 0.4));
+}
+
+.camp-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 3vw, 2.5rem);
+  color: var(--parchment);
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.8);
+  margin-top: 15px;
+  letter-spacing: 3px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.camp:hover .camp-name {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- VS BADGE --- */
+.vs-badge {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: var(--gold);
+  text-shadow:
+    0 0 20px rgba(212, 164, 55, 0.5),
+    0 4px 15px rgba(0, 0, 0, 0.8);
+  animation: vsPulse 2s ease-in-out infinite, fadeIn 1s ease 0.6s both;
+  flex-shrink: 0;
+}
+
+@keyframes vsPulse {
+  0%, 100% { transform: scale(1); text-shadow: 0 0 20px rgba(212, 164, 55, 0.5), 0 4px 15px rgba(0, 0, 0, 0.8); }
+  50% { transform: scale(1.1); text-shadow: 0 0 40px rgba(212, 164, 55, 0.8), 0 4px 15px rgba(0, 0, 0, 0.8); }
+}
+
+/* --- TITLE --- */
+h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3vw, 2.2rem);
+  text-align: center;
+  color: var(--parchment);
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.8);
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  letter-spacing: 3px;
+  animation: fadeUp 1s ease 1s both;
+}
+
+/* --- RESPONSIVE TABLET --- */
+@media (max-width: 768px) {
+  body {
+    background-image: url(../images/imgMarineSunny/vsTablet.webp);
+  }
+
+  .versus-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .vs-badge {
+    font-size: 2rem;
+  }
+
+  .camp img {
+    width: clamp(100px, 30vw, 250px);
+  }
+
+  h2 {
+    font-size: clamp(1rem, 4vw, 1.6rem);
+    bottom: 20px;
+    letter-spacing: 1px;
+  }
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 480px) {
+  body {
+    background-image: url(../images/imgMarineSunny/vsTablet.webp);
+  }
+
+  .versus-container {
+    gap: 15px;
+  }
+
+  .camp img {
+    width: clamp(80px, 35vw, 180px);
+  }
+
+  .vs-badge {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+    bottom: 15px;
+  }
+
+  .camp-name {
+    font-size: clamp(0.9rem, 4vw, 1.3rem);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,242 @@
+/* ============================================
+   HOME PAGE — One Piece
+   ============================================ */
+
+body {
+  background-image: url('../images/imgHome/homeBackground.webp');
+  background-attachment: fixed;
+  background-position: center right;
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  font-family: var(--font-body);
+  position: relative;
+}
+
+/* --- Film grain texture overlay --- */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* --- Vignette effect --- */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.5) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --- HEADER --- */
+.header {
+  text-align: center;
+  margin-top: 5vh;
+  position: relative;
+  z-index: 2;
+  animation: fadeUp 1s ease-out;
+}
+
+#op {
+  width: 30%;
+  min-width: 280px;
+  max-width: 550px;
+  height: auto;
+  filter: drop-shadow(0 8px 40px rgba(0, 0, 0, 0.6));
+  animation: logoFloat 4s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* --- WOODEN SIGN CONTAINER --- */
+.woodenSign {
+  position: absolute;
+  left: 5%;
+  width: 35vw;
+  min-width: 500px;
+  bottom: -10vw;
+  z-index: 2;
+  animation: slideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#woodenSign {
+  width: 100%;
+  display: block;
+  filter: drop-shadow(0 12px 40px rgba(0, 0, 0, 0.5));
+}
+
+/* --- AFFICHES (wanted posters) --- */
+.affiches {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  width: 80%;
+  gap: 10px;
+}
+
+.affiche-link {
+  display: block;
+  width: 30%;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s;
+}
+
+.affiche-link img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(3px 5px 12px rgba(0, 0, 0, 0.5));
+}
+
+/* Label under each poster */
+.affiche-label {
+  display: block;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(0.6rem, 1.2vw, 1rem);
+  color: var(--parchment);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  margin-top: 4px;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+/* --- Rotations & hover --- */
+.affiche-link:first-child {
+  transform: rotate(-2deg);
+  animation: posterReveal 0.8s ease-out 0.6s both;
+}
+
+.affiche-link:nth-child(2) {
+  animation: posterReveal 0.8s ease-out 0.8s both;
+}
+
+.affiche-link:last-child {
+  transform: rotate(1.5deg);
+  animation: posterReveal 0.8s ease-out 1s both;
+}
+
+@keyframes posterReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px) rotate(var(--rot, 0deg)) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--rot, 0deg)) scale(1);
+  }
+}
+
+.affiche-link:first-child { --rot: -2deg; }
+.affiche-link:last-child { --rot: 1.5deg; }
+
+.affiche-link:hover {
+  transform: scale(1.12) rotate(var(--rot, 0deg));
+  z-index: 10;
+  filter: brightness(1.05);
+}
+
+.affiche-link:hover .affiche-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.affiche-link:first-child:hover {
+  transform: scale(1.12) rotate(-2deg);
+}
+
+.affiche-link:last-child:hover {
+  transform: scale(1.12) rotate(1.5deg);
+}
+
+/* --- RESPONSIVE TABLET --- */
+@media (max-width: 768px) {
+  body {
+    overflow-y: auto;
+    background-position: 75% center;
+    background-size: cover;
+    background-attachment: scroll;
+  }
+
+  .header {
+    margin-top: 2vh;
+  }
+
+  #op {
+    width: 45%;
+    min-width: 180px;
+    max-width: 320px;
+  }
+
+  .woodenSign {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: -12vw;
+    width: 75%;
+    min-width: auto;
+  }
+
+  .affiches {
+    width: 82%;
+    top: 18%;
+  }
+
+  .affiche-label {
+    font-size: clamp(0.5rem, 2.5vw, 0.85rem);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 480px) {
+  .header {
+    margin-top: 2vh;
+  }
+
+  #op {
+    width: 55%;
+    min-width: 150px;
+    max-width: 250px;
+  }
+
+  .woodenSign {
+    width: 85%;
+    bottom: -20vw;
+  }
+
+  .affiches {
+    top: 16%;
+    gap: 4px;
+    width: 85%;
+  }
+
+  .affiche-label {
+    font-size: clamp(0.45rem, 3vw, 0.7rem);
+  }
+}
