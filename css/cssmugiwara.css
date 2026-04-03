@@ -152,8 +152,7 @@ main {
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  bottom: 15px;
   z-index: 10;
   padding: 8px;
   transition: transform 0.3s ease, opacity 0.3s;
@@ -162,7 +161,7 @@ main {
 
 .prev:hover, .next:hover {
   opacity: 1;
-  transform: translateY(-50%) scale(1.15);
+  transform: scale(1.15);
 }
 
 .prev { left: 10px; }
