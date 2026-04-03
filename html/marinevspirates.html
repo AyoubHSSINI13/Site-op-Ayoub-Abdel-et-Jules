@@ -1,46 +1,49 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Choisissez votre camp entre la Marine et les Pirates dans l'univers de One Piece.">
-    <link rel="icon" type="image/png" href="/images/favicon.png">
-    <link rel="preload" href="/images/imgMarineSunny/vsTablet.webp" as="image">
-    <link rel="preload" href="/images/imgMarineSunny/PvsM.webp" as="image">
-    <title>One Piece</title>
-    <link rel="stylesheet" href="/css/cssmarinevspirate.css">
+    <meta name="description" content="Choisissez votre camp entre la Marine et les Pirates dans l'univers de One Piece.">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="preload" href="../images/imgMarineSunny/vsTablet.webp" as="image">
+    <link rel="preload" href="../images/imgMarineSunny/PvsM.webp" as="image">
+    <title>One Piece - Choisissez votre camp</title>
+    <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="../css/cssmarinevspirate.css">
 </head>
-
 <body>
+    <div class="grain"></div>
     <main>
         <div class="header">
-            <a href="/index.html"><img src="/images/imgMarineSunny/logoOp.webp" alt="Retour accueil"
-                    id="returnhome"></a>
+            <a href="../index.html"><img src="../images/imgMarineSunny/logoOp.webp" alt="Retour accueil" id="returnhome"></a>
         </div>
 
         <div class="logpose-wrapper">
             <input type="checkbox" id="menu-toggle">
-
-
             <div class="logpose-menu">
-                <a href="/html/diverse.html">DIVERS</a>
-                <a href="/html/power.html">POUVOIRS</a>
+                <a href="./diverse.html">Divers</a>
+                <a href="./power.html">Pouvoirs</a>
             </div>
-
-
             <label for="menu-toggle" class="logpose-icon-btn">
-                <img src="/images/imgDiverse/logpose.webp" alt="Log Pose" class="logpose-icon" height="60" width="60">
+                <img src="../images/imgDiverse/logpose.webp" alt="Log Pose" class="logpose-icon" height="60" width="60">
             </label>
         </div>
-        <div class="menu" id="menu">
-            <a href="/html/marine.html"><img id="marine" src="/images/imgMarineSunny/LogoMarine.webp" alt="marine"></a>
-            <a href="/html/Mugiwara.html"><img id="pirate" src="/images/imgMarineSunny/LogoSunny.webp" alt="pirate"></a>
+
+        <div class="versus-container">
+            <a href="./Mugiwara.html" class="camp camp-pirate">
+                <img id="pirate" src="../images/imgMarineSunny/LogoSunny.webp" alt="Pirates">
+                <span class="camp-name">Pirates</span>
+            </a>
+
+            <div class="vs-badge">VS</div>
+
+            <a href="./marine.html" class="camp camp-marine">
+                <img id="marine" src="../images/imgMarineSunny/LogoMarine.webp" alt="Marine">
+                <span class="camp-name">Marine</span>
+            </a>
         </div>
-        <h2>CHOISISSEZ VOTRE CAMP !!</h2>
+
+        <h2>Choisissez votre camp !!</h2>
     </main>
-
 </body>
-
 </html>

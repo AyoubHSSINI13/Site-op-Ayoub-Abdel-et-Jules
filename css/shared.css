@@ -1,0 +1,338 @@
+/* ============================================
+   SHARED STYLES — One Piece Site
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Pirata+One&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300&display=swap');
+
+:root {
+  --gold: #d4a437;
+  --gold-light: #f0d078;
+  --teal: #1e5d59;
+  --teal-light: #2a958e;
+  --dark: #0a0a0a;
+  --parchment: #f5e6c8;
+  --ink: #1a1410;
+  --blood-red: #8b1a1a;
+  --ocean-deep: #0c2340;
+  --font-display: 'Pirata One', cursive;
+  --font-heading: 'Cinzel Decorative', serif;
+  --font-body: 'Crimson Pro', serif;
+}
+
+/* --- RESET --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* --- LOG POSE NAV (shared across all pages) --- */
+.logpose-wrapper {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.logpose-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(135deg, var(--teal), #153f3d);
+  border-radius: 50px;
+  padding: 5px 80px 5px 20px;
+  height: 60px;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin-right: -60px;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-sizing: border-box;
+  border: 1px solid rgba(212, 164, 55, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+}
+
+.logpose-menu a {
+  color: var(--parchment);
+  font-family: var(--font-heading);
+  font-size: 13px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  letter-spacing: 2px;
+  text-decoration: none;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.logpose-menu a:hover {
+  color: var(--gold);
+  text-shadow: 0 0 12px rgba(212, 164, 55, 0.5);
+}
+
+.logpose-icon-btn {
+  cursor: pointer;
+  z-index: 20;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  border-radius: 50%;
+}
+
+.logpose-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal), #153f3d);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: block;
+  position: relative;
+  z-index: 21;
+  border: 1px solid rgba(212, 164, 55, 0.3);
+}
+
+@media (hover: hover) {
+  .logpose-wrapper:hover .logpose-menu {
+    max-width: 600px;
+    opacity: 1;
+  }
+  .logpose-wrapper:hover .logpose-icon-btn .logpose-icon {
+    transform: rotate(-360deg);
+  }
+}
+
+#menu-toggle:checked ~ .logpose-menu {
+  max-width: 600px;
+  opacity: 1;
+}
+
+#menu-toggle:checked ~ .logpose-icon-btn .logpose-icon {
+  transform: rotate(-360deg);
+}
+
+/* --- SOCIAL MEDIA --- */
+.socialMedia {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+.socialMedia a {
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.socialMedia img {
+  width: clamp(30px, 3vw, 45px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.socialMedia a:hover {
+  transform: scale(1.15) translateY(-2px);
+}
+
+.socialMedia a:hover img {
+  filter: drop-shadow(0 4px 12px rgba(212, 164, 55, 0.4));
+}
+
+/* --- HEADER LOGO --- */
+.header {
+  text-align: center;
+  padding-top: 4vh;
+}
+
+#returnhome, #op {
+  width: clamp(200px, 25vw, 500px);
+  height: auto;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.5));
+}
+
+#returnhome:hover, #op:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(0 8px 30px rgba(212, 164, 55, 0.3));
+}
+
+/* --- INFO BOX (legal) --- */
+.toggle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.icone-info {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.icone-info:hover {
+  transform: scale(1.1);
+}
+
+.icone-info .img-icone {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+#info-box {
+  position: fixed;
+  right: 110px;
+  bottom: 20px;
+  max-width: 75vw;
+  max-height: 25vh;
+  padding: 16px 20px;
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(12px);
+  color: var(--parchment);
+  border-radius: 12px;
+  border: 1px solid rgba(212, 164, 55, 0.2);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  overflow-y: auto;
+  display: none;
+  z-index: 999;
+  scrollbar-width: none;
+}
+
+#info-box::-webkit-scrollbar {
+  width: 0;
+}
+
+#toggle-info:checked ~ .icone-info + #info-box {
+  display: block;
+}
+
+/* --- FADE IN ANIMATION --- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* --- GLOBAL LINK RESET --- */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* --- RESPONSIVE SHARED --- */
+@media (max-width: 768px) {
+  .logpose-wrapper {
+    top: 10px;
+    right: 10px;
+  }
+
+  .logpose-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .logpose-menu {
+    padding: 5px 60px 5px 15px;
+    height: 45px;
+    margin-right: -45px;
+    gap: 12px;
+  }
+
+  .logpose-menu a {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  .header {
+    padding-top: 2vh;
+  }
+
+  #returnhome, #op {
+    width: clamp(150px, 40vw, 300px);
+  }
+
+  .socialMedia {
+    bottom: 10px;
+    left: 10px;
+    gap: 8px;
+  }
+
+  .socialMedia img {
+    width: clamp(25px, 6vw, 35px);
+  }
+
+  .icone-info {
+    width: 50px;
+    height: 50px;
+    right: 10px;
+    bottom: 10px;
+  }
+
+  #info-box {
+    right: 70px;
+    bottom: 10px;
+    max-width: 65vw;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logpose-menu a {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  .logpose-menu {
+    gap: 8px;
+    padding: 5px 55px 5px 10px;
+  }
+
+  #returnhome, #op {
+    width: clamp(120px, 45vw, 220px);
+  }
+
+  .icone-info {
+    width: 40px;
+    height: 40px;
+  }
+
+  #info-box {
+    right: 60px;
+    max-width: 70vw;
+    max-height: 30vh;
+  }
+}
