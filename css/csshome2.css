@@ -1,0 +1,153 @@
+/* --- LOGIQUE DU BOUTON SANS JS --- */
+.toggle-checkbox {
+    display: none;
+}
+
+.btn-theme {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 12px 25px;
+    background: white;
+    color: #1a2a6c;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+}
+
+/* --- STYLE PAR DÉFAUT (DÉGRADÉ MARINE) --- */
+body {
+    /* Dégradé de type Marine : Bleu nuit vers Bleu océan */
+    background: linear-gradient(135deg, #051937, #004d7a, #008793, #00bf72);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    /* Animation douce du fond */
+
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* --- STYLE ALTERNATIF (DÉGRADÉ PIRATE) --- */
+/* S'active quand on coche la case */
+#style-toggle:checked~body {
+    /* Dégradé Pirate : Noir vers Rouge sang */
+    background: linear-gradient(135deg, #000000, #434343, #8e0e00, #1f1c18);
+    background-size: 400% 400%;
+}
+
+/* Changements visuels des éléments en mode Pirate */
+#style-toggle:checked~.header #op {
+    filter: drop-shadow(0 0 20px #ff0000) brightness(1.2);
+}
+
+#style-toggle:checked~.woodenSign #woodenSign {
+    filter: sepia(1) brightness(0.6) contrast(1.2);
+}
+
+#style-toggle:checked~.btn-theme {
+    background: #8e0e00;
+    color: white;
+    box-shadow: 0 4px 20px rgba(255, 0, 0, 0.4);
+}
+
+/* --- STRUCTURE (Ton code adapté) --- */
+.header {
+    text-align: center;
+    margin-top: 5vh;
+}
+
+#op {
+    width: 30%;
+    min-width: 300px;
+    max-width: 600px;
+    height: auto;
+    transition: filter 0.5s ease;
+}
+
+.woodenSign {
+    position: absolute;
+    left: 5%;
+    width: 35vw;
+    min-width: 500px;
+    bottom: -10vw;
+    transition: all 0.5s ease;
+}
+
+#woodenSign {
+    width: 100%;
+    display: block;
+    transition: filter 0.5s ease;
+}
+
+.affiches {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    width: 80%;
+    gap: 10px;
+}
+
+.affiches a {
+    display: block;
+    transition: transform 0.3s ease-in-out;
+    width: 30%;
+}
+
+.affiches img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Interactions */
+.affiches a:hover {
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+/* Rotations */
+.affiches>a:first-child {
+    transform: rotate(-2deg);
+}
+
+.affiches>a:last-child {
+    transform: rotate(1.5deg);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .woodenSign {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -30vh;
+        width: 80%;
+        min-width: auto;
+    }
+
+    .affiches {
+        width: 82%;
+    }
+}
